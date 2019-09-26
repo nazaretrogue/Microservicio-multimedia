@@ -28,7 +28,10 @@ En una asignatura de otro año nos enseñaron a utilizar en profundidad los paqu
 que se encargan de multimedia en Java, siendo sencillo de escribir en código pero
 consiguiendo unos resultados muy visuales. Me gustó tanto que decidí que quería
 hacer un proyecto utilizando lo que aprendí, y de ahí surgió la idea de hacer
-un microservicio de tratamiento de imágenes.
+un microservicio de tratamiento de imágenes.  
+
+Se ha creado un caso hipotético donde un cliente desea que se implemente el filtro
+comentado para su empresa. Para ello, se hace una entrevista que se puede leer [aquí](https://github.com/nazaretrogue/Microservicio-multimedia/blob/master/doc/Historia_usuario.pdf).
 
 ## ¿Qué hace exactamente el filtro del microservicio?
 
@@ -36,4 +39,6 @@ Un ejemplo del funcionamiento del filtro se puede encontrar en la documentación
 [aquí](https://github.com/nazaretrogue/SMM/tree/master/Evaluacion). Para probar
 el propio filtro solo hay que seguir las [instrucciones](https://github.com/nazaretrogue/SMM.git)
 de instalación detalladas en el repositorio, abrir una imagen en la aplicación
-y aplicar el filtro termal sobre dicha imagen.
+y aplicar el filtro termal sobre dicha imagen.  
+
+La [implementación del filtro](https://github.com/nazaretrogue/Microservicio-multimedia/tree/master/src) está disponible en este repositorio.
