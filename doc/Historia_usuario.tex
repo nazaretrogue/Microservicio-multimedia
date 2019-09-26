@@ -1,0 +1,103 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}	%Idioma
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx} 	%Añadir imágenes
+\usepackage{geometry}	%Ajustar márgenes
+\usepackage[export]{adjustbox}[2011/08/13]
+\usepackage{float}
+\restylefloat{table}
+\usepackage[hidelinks]{hyperref}
+\usepackage{titling}
+%\usepackage{minted}
+\usepackage{multirow}
+\usepackage{caption}
+\usepackage{multicol}
+\usepackage[shortlabels]{enumitem}
+\usepackage{array}
+\selectlanguage{spanish}
+
+%Opciones de encabezado y pie de página:
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\lhead{Nazaret Román Guerrero}
+\rhead{Infraestructura Virtual}
+\lfoot{Grado en Ingeniería Informática}
+\cfoot{}
+\rfoot{\thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+
+%Opciones de fuente:
+\usepackage[utf8]{inputenc}
+\usepackage[default]{sourcesanspro}
+\usepackage{sourcecodepro}
+\usepackage[T1]{fontenc}
+
+\setlength{\parindent}{15pt}
+\setlength{\headheight}{15pt}
+\setlength{\voffset}{10mm}
+
+% Custom colors
+\usepackage{color}
+\definecolor{deepblue}{rgb}{0,0,0.5}
+\definecolor{deepred}{rgb}{0.6,0,0}
+\definecolor{deepgreen}{rgb}{0,0.5,0}
+
+\usepackage{listings}
+
+\begin{document}
+\begin{titlepage}
+
+\begin{minipage}{\textwidth}
+
+\centering
+\includegraphics[width=0.5\textwidth]{logo.png}\\
+
+\textsc{\Large Infraestructura Virtual\\[0.2cm]}
+\textsc{GRADO EN INGENIERÍA INFORMÁTICA}\\[1cm]
+
+{\Huge\bfseries Historia de usuario\\}
+\noindent\rule[-1ex]{\textwidth}{3pt}\\[3.5ex]
+{\large\bfseries Hito 1: estructuración del proyecto}
+\end{minipage}
+
+\vspace{1.5cm}
+\begin{minipage}{\textwidth}
+\centering
+
+\textbf{Autora}\\ {Nazaret Román Guerrero}\\[2.5ex]
+\includegraphics[width=0.3\textwidth]{etsiit.jpeg}\\[0.1cm]
+\vspace{1cm}
+\textsc{Escuela Técnica Superior de Ingenierías Informática y de Telecomunicación}\\
+\vspace{1cm}
+\textsc{Curso 2018-2019}
+\end{minipage}
+\end{titlepage}
+
+\pagenumbering{gobble}
+\pagenumbering{arabic}
+\tableofcontents
+\thispagestyle{empty}
+
+\newpage
+
+\section{Descripción general}
+Este documento está basado en un caso hipotético de que un cliente acuda a nosotros a pedir el desarrollo de un servicio para la empresa en la que trabaja. Todas las personas, empresas y hechos que aparecen en el ejemplo son inventados, y cualquier parecido con la realidad es pura coincidencia.\\
+
+La empresa de gestión multimedia, \textit{Instegrom}, creadora de la famosa red social con ese mismo nombre, desea un nuevo filtro para su red social, pero en lugar de integrarlo en la aplicación, desean hacer un cambio radical a la forma de actuación de la empresa y utilizar la computación en la nube. Para ello, recurren a nosotros en busca de ayuda.\\
+
+El cliente pide, como un comienzo para su nueva política de empresa, un microservicio en la nube que sea capaz de recibir una imagen en formato \textsc{.jpeg} o \textsc{.jpg} y la procese con un filtro, dejando las zonas que tienen un color cálido igual y sustituyendo las demás partes por la misma imagen pero en escala de grises.
+
+\section{Requisitos funcionales}
+Una vez que tenemos los rasgos generales de lo que buscan, se han definido tres requisitos funcionales principales, que pueden ir aumentando en el caso de que el cliente desee añadir algun extra al microservicio. Los requisitos son los que siguen:
+
+\begin{itemize}
+	\item RF1. El microservicio será capaz de recibir una imagen a través de peticiones \textsc{HTTP} o \textsc{HTTPS}.
+	\item RF2. La imagen recibida será procesada aplicando un filtro.
+	\item RF3. El filtro mantendrá las zonas con un valor igual o superior a 128 en la banda correspondiente al rojo en una imagen en formato RGB o RGBA.
+\end{itemize}
+
+\end{document}
