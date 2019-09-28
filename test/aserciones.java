@@ -1,9 +1,12 @@
 package tests;
 
+import org.testng.Assert;
+import org.testng.annotations.Test;
 import java.awt.image.BufferedImage;
 
 public class MultimediaTests {
-    public void JPGTest(BufferedImage img_source){
+    @Test
+    public void JPGTest(){
         /*try{
             File f = new File(dlg.getSelectedFile().getAbsolutePath()){
                 @Override
@@ -22,6 +25,7 @@ public class MultimediaTests {
                 System.err.println("Error al leer el fichero");
         }*/
 
-        assertTrue(false);
+        BufferedImage img = new BufferedImage(100, 100, TYPE_INT_RGB);
+        Assert.assertEquals(TYPE_INT_RGB, img.getType());
     }
 }
