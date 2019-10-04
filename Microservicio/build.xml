@@ -70,6 +70,13 @@
     nbproject/build-impl.xml file. 
 
     -->
+	<!-- <junit printsummary="yes" haltonfailure="yes">
+		<classpath>
+			<pathelement location="${build.tests}"/>
+			<pathelement path="${java.class.path}"/>
+		</classpath>
+	</junit> -->
+
     <target name="-post-jar">
         <property name="pack.jar" value="dist/${application.title}.pack.jar"/>
         <echo message="Packaging into a single JAR at ${pack.jar}"/>
