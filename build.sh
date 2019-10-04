@@ -1,5 +1,3 @@
 #!/bin/bash
 
-set -ev
-cd my-app
-mvn clean install
+cd Microservicio
