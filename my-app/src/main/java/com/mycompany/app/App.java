@@ -3,7 +3,7 @@ package com.mycompany.app;
 import java.awt.image.BufferedImage;
 import java.awt.color.ColorSpace;
 import java.awt.image.ColorConvertOp;
-import TermalOp;
+import nrg.TermalOp;
 /**
  * Hello world!
  *
