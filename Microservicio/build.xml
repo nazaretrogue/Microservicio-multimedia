@@ -70,28 +70,25 @@
     nbproject/build-impl.xml file. 
 
     -->
-	<target name="junit" depends="compile">
-
-  <junit printsummary="yes" haltonfailure="no">
-
-	<!--
-		<classpath location="lib/junit-4.11.jar" />
-		<classpath location="lib/hamcrest-core-1.3.jar" />
-	-->
-	<classpath refid="test.path" />
-	<classpath location="${test.classes.dir}" />
-		
-	<formatter type="xml" />
-	<formatter type="plain" />
-		
-	<batchtest fork="yes" todir="${report.dir}">
-		<fileset dir="${test.dir}">
-			<include name="**/*Test*.java" />
-		</fileset>
-	</batchtest>
-		
-  </junit>
-</target>
+	<target name="test.java" depends="build.java.src, build.java.test">
+    <mkdir dir="${java.test.reports.path}" />
+    <junit haltonfailure="no" printsummary="true">
+      <classpath>
+        <path refid="test.run.classpath" />
+        <pathelement location = "${java.src.build.path}" />
+      </classpath>
+      <!-- add to see errors on console while running junit tests.
+      <formatter type="brief" usefile="false" />    
+      -->
+      <formatter type="xml"/>
+      <batchtest fork="yes" todir="${java.test.reports.path}">
+        <fileset dir="${java.test.build.path}/">
+          <include name="**/*Test*.class"/>
+          <exclude name="**/*$*.class"/>
+        </fileset>
+      </batchtest>
+    </junit>
+  </target> 
 
     <target name="-post-jar">
         <property name="pack.jar" value="dist/${application.title}.pack.jar"/>
