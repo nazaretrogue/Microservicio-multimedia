@@ -1,9 +1,8 @@
-package com.mycompany.app;
+package app;
 
 import java.awt.image.BufferedImage;
 import java.awt.color.ColorSpace;
 import java.awt.image.ColorConvertOp;
-import nrg.image.TermalOp;
 
 /**
  * Hello world!

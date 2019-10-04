@@ -296,3 +296,7 @@ TSWLatexianTemp*
 
 # Makeindex log files
 *.lpz
+/microservice.image/nbproject/private/
+/Tratamiento-imagenes/nbproject/private/
+/Tratamiento-imagenes/build/
+/my-app/src/main/java/com/microservice.image/nbproject/private/
