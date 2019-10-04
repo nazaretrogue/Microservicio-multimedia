@@ -7,7 +7,7 @@
 
 <target name="library">
     <mkdir dir="./Image-filter/build/classes"/>
-    <javac srcdir="./Image-filter/src" destdir="./Image-filter/build/classes"/>
+    <javac srcdir="./Image-filter/src" destdir="./Image-filter/build/classes">
         <classpath>
             <pathelement path="lib/sm.image.color.jar"/>
             <pathelement path="lib/sm.image.jar"/>
@@ -17,7 +17,7 @@
 
 <target name="compile">
     <mkdir dir="./Microservicio/build/classes"/>
-    <javac srcdir="./Microservicio/src" destdir="./Microservicio/build/classes"/>
+    <javac srcdir="./Microservicio/src" destdir="./Microservicio/build/classes">
         <classpath>
             <pathelement path="Image-filter/dist/Image-filter.jar"/>
         </classpath>
