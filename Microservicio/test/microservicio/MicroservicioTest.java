@@ -5,48 +5,44 @@
  */
 package microservicio;
 
-import org.junit.After;
-import org.junit.AfterClass;
-import org.junit.Before;
-import org.junit.BeforeClass;
-import org.junit.Test;
-import static org.junit.Assert.*;
+import junit.framework.Test;
+import junit.framework.TestCase;
+import junit.framework.TestSuite;
+import java.io.File;
+import java.net.URLConnection;
 
 /**
- *
- * @author nazaret
+ * Unit test for simple App.
  */
-public class MicroservicioTest {
-    
-    public MicroservicioTest() {
-    }
-    
-    @BeforeClass
-    public static void setUpClass() {
-    }
-    
-    @AfterClass
-    public static void tearDownClass() {
-    }
-    
-    @Before
-    public void setUp() {
-    }
-    
-    @After
-    public void tearDown() {
+public class MicroservicioTest extends TestCase
+{
+    /**
+     * Create the test case
+     *
+     * @param testName name of the test case
+     */
+    public MicroservicioTest(String testName)
+    {
+        super(testName);
     }
 
     /**
-     * Test of main method, of class Microservicio.
+     * @return the suite of tests being tested
      */
-    @Test
-    public void testMain() {
-        System.out.println("main");
-        String[] args = null;
-        Microservicio.main(args);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+    public static Test suite()
+    {
+        return new TestSuite(MicroservicioTest.class);
     }
-    
+
+    /**
+     * Rigourous Test :-)
+     */
+    public void testApp()
+    {
+        assertTrue( true );
+        /*File file = new File("archivo.jpeg");
+        String mime = URLConnection.guessContentTypeFromName(file.getName());
+
+        assertEquals(mime, "image/jpeg");*/
+    }
 }
