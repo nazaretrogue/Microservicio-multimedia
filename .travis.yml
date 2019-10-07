@@ -1,5 +1,5 @@
 language: java
 sudo: false
-install:
+install: 
 before_script: sudo apt install ant-optional
 script: ./build.sh
