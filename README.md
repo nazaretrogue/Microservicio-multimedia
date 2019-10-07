@@ -2,11 +2,14 @@
 [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
 [![Build Status](https://travis-ci.org/nazaretrogue/Microservicio-multimedia.svg?branch=master)](https://travis-ci.org/nazaretrogue/Microservicio-multimedia)
 
-## Table of contents
+## Tabla de contenidos
 <!--ts-->
    * [¿Qué es y para qué sirve?](#¿Que-es-y-para-que-sirve?)
+   * [¿Qué se usará?](#¿Que-se-usara?)
+   * [¿Por qué crear este microservicio?](#¿Por-que-crear-este-microservicio?)
+   * [¿Qué hace exactamente el filtro del microservicio?](#¿Que-hace-exactamente-el-filtro-del-microservicio?)
+   * [Cómo instalar y testear la aplicación en local](#Como-instalar-y-testear-la-aplicacion-en-local)
 <!--te-->
-
 
 ## ¿Qué es y para qué sirve?
 
@@ -30,10 +33,7 @@ de Java en la nube. El compilador utilizado por Java es el *JDK*.
 
 Se necesitarán dos bibliotecas externas, disponibles en el repositorio de
 [sistemas multimedia](https://github.com/nazaretrogue/SMM/tree/master/Evaluacion).
-Dichas bibliotecas están en formato .jar y son [sm.image.color.jar](https://github.com/nazaretrogue/SMM/blob/master/Evaluacion/sm.image.color.jar)
-y [sm.image.jar](https://github.com/nazaretrogue/SMM/blob/master/Evaluacion/sm.image.jar),
-que contienen herramientas para gestionar los espacios de color y para los formatos
-de las imágenes respectivamente.
+Se explican más detallada en la [documentación]()
 
 No será necesaria una base de datos donde almacenar las imágenes puesto que se enviarán
 directamente en los mensajes HTTP.
@@ -63,7 +63,8 @@ está disponible en este repositorio.
 ## Cómo instalar y testear la aplicación en local
 
 Para poder testear la aplicación, es necesario tener instalado el *JDK* con el framework
-de *jUnit*, y tener instalado *ant* en el local.
+de *jUnit*, y tener instalado *ant* en el local. Todo esto, y la funcionalidad del
+test está explicado con más detalle en la [documentación]()
 
 Una vez que estén instalados, ejecutamos el script de bash que hay en el directorio
 principal, [build.sh](https://github.com/nazaretrogue/Microservicio-multimedia/blob/master/build.sh).
@@ -71,9 +72,8 @@ Este script se encarga de entrar al directorio donde está la aplicación princi
 ejecutar el test mediante el comando *ant*; para ello, hay que ejecutar dicho script con
 
 ```bash
-./build.sh
+$ ./build.sh
 ```
 
-Con esto, se pasará el test automáticamente. En él, se comprueba que la imagen que
-se va a utilizar para aplicar el filtro está en el formato y el espacio de color
-correctos (.jpeg/.jpg y RGB respectivamente).
+Con esto, se pasará el test automáticamente y la salida por pantalla mostrará si
+ha sido exitoso o no. 
