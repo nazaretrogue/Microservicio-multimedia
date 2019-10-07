@@ -4,7 +4,7 @@
 
 ## Table of contents
 <!--ts-->
-   * [¿Qué es y para qué sirve?](##¿Qué es y para qué sirve?)
+   * [¿Qué es y para qué sirve?](#¿Qué es y para qué sirve?)
 <!--te-->
 
 
