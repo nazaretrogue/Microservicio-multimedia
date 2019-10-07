@@ -33,7 +33,7 @@ de Java en la nube. El compilador utilizado por Java es el *JDK*.
 
 Se necesitarán dos bibliotecas externas, disponibles en el repositorio de
 [sistemas multimedia](https://github.com/nazaretrogue/SMM/tree/master/Evaluacion).
-Se explican más detallada en la [documentación]()
+Se explican más detallada en la [documentación](https://github.com/nazaretrogue/Microservicio-multimedia/blob/master/doc/Tecnologias_usadas.md).
 
 No será necesaria una base de datos donde almacenar las imágenes puesto que se enviarán
 directamente en los mensajes HTTP.
@@ -64,7 +64,7 @@ está disponible en este repositorio.
 
 Para poder testear la aplicación, es necesario tener instalado el *JDK* con el framework
 de *jUnit*, y tener instalado *ant* en el local. Todo esto, y la funcionalidad del
-test está explicado con más detalle en la [documentación]()
+test está explicado con más detalle en la [documentación](https://github.com/nazaretrogue/Microservicio-multimedia/blob/master/doc/Tecnologias_usadas.md).
 
 Una vez que estén instalados, ejecutamos el script de bash que hay en el directorio
 principal, [build.sh](https://github.com/nazaretrogue/Microservicio-multimedia/blob/master/build.sh).
@@ -76,4 +76,4 @@ $ ./build.sh
 ```
 
 Con esto, se pasará el test automáticamente y la salida por pantalla mostrará si
-ha sido exitoso o no. 
+ha sido exitoso o no.
