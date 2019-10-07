@@ -10,6 +10,10 @@ import junit.framework.TestCase;
 import junit.framework.TestSuite;
 import java.io.File;
 import java.net.URLConnection;
+import java.net.URL;
+import java.awt.image.BufferedImage;
+import javax.imageio.ImageIO;
+
 
 /**
  * Unit test for simple App.
@@ -39,10 +43,18 @@ public class MicroservicioTest extends TestCase
      */
     public void testApp()
     {
-        assertTrue( true );
-        /*File file = new File("archivo.jpeg");
-        String mime = URLConnection.guessContentTypeFromName(file.getName());
+        try{
+            URL url = new URL("https://images-na.ssl-images-amazon.com/images/I/61S60Xn5BsL._SL1000_.jpg");
+            BufferedImage img = ImageIO.read(url.openStream());
+            
+            File file = new File("descargada.jpg");
+            //ImageIO.write(img, "jpg", file);
+        
+            String mime = URLConnection.guessContentTypeFromName(file.getName());
 
-        assertEquals(mime, "image/jpeg");*/
+            assertEquals(mime, "image/jpeg");
+        }catch(Exception e){
+            System.err.println(e.getLocalizedMessage());
+        }
     }
 }
