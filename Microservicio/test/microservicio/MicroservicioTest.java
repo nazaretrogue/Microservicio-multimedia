@@ -43,16 +43,31 @@ public class MicroservicioTest extends TestCase
      */
     public void testApp()
     {
+        esJPEG_yRGB();
+    }
+    
+    public void esJPEG_yRGB(){
         try{
+            // Extraemos la imagen de la url
             URL url = new URL("https://images-na.ssl-images-amazon.com/images/I/61S60Xn5BsL._SL1000_.jpg");
             BufferedImage img = ImageIO.read(url.openStream());
             
             File file = new File("descargada.jpg");
             //ImageIO.write(img, "jpg", file);
         
+            // Sacamos el mimetype y comprobamos que es jpeg o jpg
             String mime = URLConnection.guessContentTypeFromName(file.getName());
 
             assertEquals(mime, "image/jpeg");
+            
+            // En el caso de que sea jpeg o jpg continuamos comprobadon si es correcta
+            // Comprobamos si la imagen es RGB
+            boolean rgb = false;
+        
+            if(img.getSampleModel().getNumBands() == 3 && img.getColorModel().getColorSpace().isCS_sRGB())
+                rgb = true;
+            
+            assertEquals(rgb, true);
         }catch(Exception e){
             System.err.println(e.getLocalizedMessage());
         }
