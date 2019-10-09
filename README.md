@@ -1,6 +1,7 @@
 # Microservicio de tratamiento de imágenes
 [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
 [![Build Status](https://travis-ci.org/nazaretrogue/Microservicio-multimedia.svg?branch=master)](https://travis-ci.org/nazaretrogue/Microservicio-multimedia)
+[![Run Status](https://api.shippable.com/projects/5d9d9d8227d7a00007532757/badge?branch=master)]()
 
 ## Tabla de contenidos
 <!--ts-->
