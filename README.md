@@ -78,4 +78,4 @@ $ ./build.sh
 ```
 
 Con esto, se pasará el test automáticamente y la salida por pantalla mostrará si
-ha sido exitoso o no.
+el test ha sido exitoso o no.
