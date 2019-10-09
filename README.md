@@ -67,10 +67,11 @@ Para poder testear la aplicación, es necesario tener instalado el *JDK* con el 
 de *jUnit*, y tener instalado *ant* en el local. Todo esto, y la funcionalidad del
 test está explicado con más detalle en la [documentación](https://github.com/nazaretrogue/Microservicio-multimedia/blob/master/doc/Tecnologias_usadas.md).
 
-Una vez que estén instalados, ejecutamos el script de bash que hay en el directorio
-principal, [build.sh](https://github.com/nazaretrogue/Microservicio-multimedia/blob/master/build.sh).
+Una vez que estén instalados (y por supuesto, que tengamos el repositorio clonado en
+la máquina local), ejecutamos el script de bash que hay en el directorio principal,
+[build.sh](https://github.com/nazaretrogue/Microservicio-multimedia/blob/master/build.sh).
 Este script se encarga de entrar al directorio donde está la aplicación principal y
-ejecutar el test mediante el comando *ant*; para ello, hay que ejecutar dicho script con
+ejecutar el test mediante el comando *ant*; para ello, solo hay que ejecutar dicho script con
 
 ```bash
 $ ./build.sh

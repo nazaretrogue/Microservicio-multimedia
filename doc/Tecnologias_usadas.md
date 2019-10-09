@@ -15,12 +15,19 @@ el archivo [*.travis.yml*](https://github.com/nazaretrogue/Microservicio-multime
 se prueba la aplicación con distintas versiones del *openJDK* para comprobar el
 correcto funcionamiento en distintos sistemas.
 
-Se ha utilizado este servicio de integración continua porque es fácil de configurar y
-de utilizar con GitHub.
+Se ha incluido un segundo sistema de integración continua, [Shippable](https://app.shippable.com/),
+donde se ha configurado el archivo [*shippable.yml*](https://github.com/nazaretrogue/Microservicio-multimedia/blob/master/shippable.yml)
+para que, al igual que con *Travis*, haga tests en dos versiones distintas del *openJDK*
+(en ambos sitemas se prueban las mismas versiones, *openJDK10* y *openJDK11*).
+
+Se han utilizado este servicios de integración continua porque son fáciles de configurar y
+de utilizar con GitHub. Además se ha incluido un *badget* en el README del repositorio
+de ambos para poder comprobar de manera visual que ambos sistemas están funcionando
+correctamente.
 
 En el test implementado se comprueba que la imagen que se va a utilizar para
 aplicar el filtro está en el formato y el espacio de color correctos (.jpeg/.jpg
 y RGB respectivamente). Actualmente solo se comprueba una imagen extrayéndola de
 la URL; una vez que se avance más en el proyecto, la imagen que se comprobará será
 la que se envíe en la propia petición HTTP, por lo que habrá que modificar ligeramente
-la implementación del test. 
+la implementación del test.
