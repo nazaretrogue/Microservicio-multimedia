@@ -15,7 +15,20 @@ el archivo [*.travis.yml*](https://github.com/nazaretrogue/Microservicio-multime
 se prueba la aplicación con distintas versiones del *openJDK* para comprobar el
 correcto funcionamiento en distintos sistemas.
 
-El archivo de configuración de *Travis* indica qué lenguaje (directiva ***language***) y en qué versiones se va a testear la aplicación (directiva ***jdk***). Puesto que el archivo para construir el programa utilizando *ant* es el *build.xml* y éste está en otro directorio que no es el principal, es necesario indicar en el archivo *.travis.yml* que instale ciertas dependencias opcionales para *ant* (para que todo funcione correctamente, con la directiva ***install***), y que, además,**antes de ejecutar el test** (directiva ***before_script*** en el archivo), que entre en el directorio donde está la herramienta de construcción para poder ejecutar correctamente los tests. Una vez ha entrado, al directorio, se ejecuta automáticamente *ant* utilizando el programa y los tests construidos mediante *build.xm*. Además, se ha prohibido que el microservicio se ejecute con permisos de administrador directiva ***sudo***).
+El archivo de configuración de *Travis* indica qué lenguaje (directiva ***language***)
+y en qué versiones se va a testear la aplicación (directiva ***jdk***). Puesto
+que el archivo para construir el programa utilizando *ant* es el *build.xml* y
+éste está en otro directorio que no es el principal, es necesario indicar en el
+archivo *.travis.yml* que instale ciertas dependencias opcionales para *ant* (para
+que todo funcione correctamente, con la directiva ***install***), y que,
+además, **antes de ejecutar el test** (directiva ***before_script*** en el
+archivo), entre en el directorio donde está la herramienta de construcción
+para poder ejecutar correctamente los tests. Una vez ha entrado al
+directorio, se ejecuta automáticamente *ant* utilizando el programa y
+los tests construidos mediante *build.xml*. Además, se ha prohibido que
+el microservicio se ejecute con permisos de administrador (directiva ***sudo***,
+esto no significa que la instalación de dependencias previa no se pueda hacer, se
+ha prohibido el uso del microservicio con sudo, no el uso en general de sudo).
 
 ```bash
 language: java
