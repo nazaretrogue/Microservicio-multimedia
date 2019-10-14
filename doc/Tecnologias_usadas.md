@@ -133,10 +133,10 @@ la implementación del test.
 
 ## Bibliografía
 
-    * [Herramienta de construcción: Maven](https://maven.apache.org/guides/getting-started/maven-in-five-minutes.html)
-    * [Dependecias externas en maven](https://stackoverflow.com/questions/28703491/how-can-i-add-a-3rd-party-jar-to-my-travis-ci-maven-build)
-    * [Travis usa ant en lugar de maven](https://stackoverflow.com/questions/53180531/travis-uses-ant-instead-of-maven)
-    * [Dependecias externas en ant](https://www.mkyong.com/ant/ant-how-to-create-a-jar-file-with-external-libraries/)
-    * [Integración continua en Travis CI](https://docs.travis-ci.com/user/languages/java/)
-    * [Tests en Java. Uso de jUnit](https://dev.to/chrisvasqm/introduction-to-unit-testing-with-java-2544)
-    * [jUnit con ant](http://ant.apache.org/manual/Tasks/junit.html)
+[Herramienta de construcción: Maven](https://maven.apache.org/guides/getting-started/maven-in-five-minutes.html)
+[Dependecias externas en maven](https://stackoverflow.com/questions/28703491/how-can-i-add-a-3rd-party-jar-to-my-travis-ci-maven-build)
+[Travis usa ant en lugar de maven](https://stackoverflow.com/questions/53180531/travis-uses-ant-instead-of-maven)
+[Dependecias externas en ant](https://www.mkyong.com/ant/ant-how-to-create-a-jar-file-with-external-libraries/)
+[Integración continua en Travis CI](https://docs.travis-ci.com/user/languages/java/)
+[Tests en Java. Uso de jUnit](https://dev.to/chrisvasqm/introduction-to-unit-testing-with-java-2544)
+[jUnit con ant](http://ant.apache.org/manual/Tasks/junit.html)
