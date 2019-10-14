@@ -9,6 +9,7 @@
         * [Travis CI](#Travis-CI)
         * [Shippable CI](#Shippable-CI)
    * [¿Qué hace el test?](#¿Que-hace-el-test)
+   * [Bibliografía](#Bibliografia)
 <!--te-->
 
 ## Bibliotecas externas
@@ -45,6 +46,13 @@ infierno para intentar que funcionara con *maven* y al final no lo conseguí. La
 de *maven* hacen difícil enlazar bibliotecas manualmente por lo que decidí cambiar de
 herramienta. Utilizando el IDE de *netbeans*, generar archivos *ant* que enlacen
 las bibliotecas externas es un proceso trivial.
+
+No obstante, con *maven* el uso del framework de *jUnit* para los tests no requería
+de ningún esfuerzo puesto que todo funcionaba correctamente. Con *ant* ha sido
+necesario enlazar manualmente una biblioteca extra, [jUnit-4.12.jar](https://github.com/nazaretrogue/Microservicio-multimedia/blob/master/lib/junit-4.12.jar)
+puesto que, de otro modo, *Travis* utilizaba una versión antigua con la que no funcionaba
+la ejecución de los tests. A pesar de ser una biblioteca que viene por defecto
+con el *JDK*, ha habido que enlazarla, motivo por el cual está subida en el repositorio.
 
 ## Uso de *ant*
 
@@ -122,3 +130,13 @@ y RGB respectivamente). Actualmente solo se comprueba una imagen extrayéndola d
 la URL; una vez que se avance más en el proyecto, la imagen que se comprobará será
 la que se envíe en la propia petición HTTP, por lo que habrá que modificar ligeramente
 la implementación del test.
+
+## Bibliografía
+
+    * [Herramienta de construcción: Maven](https://maven.apache.org/guides/getting-started/maven-in-five-minutes.html)
+    * [Dependecias externas en maven](https://stackoverflow.com/questions/28703491/how-can-i-add-a-3rd-party-jar-to-my-travis-ci-maven-build)
+    * [Travis usa ant en lugar de maven](https://stackoverflow.com/questions/53180531/travis-uses-ant-instead-of-maven)
+    * [Dependecias externas en ant](https://www.mkyong.com/ant/ant-how-to-create-a-jar-file-with-external-libraries/)
+    * [Integración continua en Travis CI](https://docs.travis-ci.com/user/languages/java/)
+    * [Tests en Java. Uso de jUnit](https://dev.to/chrisvasqm/introduction-to-unit-testing-with-java-2544)
+    * [jUnit con ant](http://ant.apache.org/manual/Tasks/junit.html)
