@@ -5,8 +5,10 @@ package ApiRest;
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-import java.io.BufferedReader;
+import ServicioMensajeria.Sender;
+import java.io.ByteArrayOutputStream;
 import java.io.IOException;
+import java.io.InputStream;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -61,8 +63,6 @@ public class API extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         processRequest(request, response);
-        
-        
     }
 
     /**
@@ -79,16 +79,33 @@ public class API extends HttpServlet {
         processRequest(request, response);
         
         String tipo = request.getContentType();
-        BufferedReader imagen_full = null;
+        InputStream imagen_full;
         
         //multipart/form-data
         if(tipo.equals("image/jpeg")){
-            imagen_full = request.getReader();
+            imagen_full = request.getInputStream();
             
-        }        
+            ByteArrayOutputStream os = new ByteArrayOutputStream();
+            byte[] buffer = new byte[409600];
+            
+            try{
+                int linea;
+                while((linea = imagen_full.read(buffer)) != -1){
+                    os.write(buffer, 0, linea);
+                }
+            } catch(Exception e){
+                System.err.println(e);
+            }
+            
+            byte[] bytes = os.toByteArray();
+            
+            try{
+                Sender s = new Sender(bytes);
+            } catch(Exception e){
+                System.err.println(e);
+            }
+        }
     }
-    
-    
 
     /**
      * Returns a short description of the servlet.

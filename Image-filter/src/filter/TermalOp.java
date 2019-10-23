@@ -5,7 +5,9 @@
  */
 package filter;
 
+import java.awt.color.ColorSpace;
 import java.awt.image.BufferedImage;
+import java.awt.image.ColorConvertOp;
 import java.awt.image.WritableRaster;
 
 /**
@@ -61,6 +63,15 @@ public class TermalOp extends sm.image.BufferedImageOpAdapter{
             }
         }
         
+        return dest;
+    }
+    
+    public static BufferedImage filterPrepare(BufferedImage img_source){
+        ColorSpace cs = new sm.image.color.GreyColorSpace();
+        ColorConvertOp cop = new ColorConvertOp(cs, null);
+
+        BufferedImage dest = cop.filter(img_source, null);
+                    
         return dest;
     }
 
