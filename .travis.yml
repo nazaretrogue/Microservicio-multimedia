@@ -5,5 +5,10 @@ jdk:
 sudo: false
 install:
 - sudo apt install ant-optional
-before_script: 
+- wget https://github.com/nazaretrogue/Microservicio-multimedia/blob/master/apache-activemq-5.15.10-bin.tar.gz
+- tar zxvf apache-activemq-5.15.10-bin.tar.gz
+- cd apache-activemq-5.15.10/bin/
+- chmod +x activemq
+- ./activemq
+before_script:
 - cd Microservicio
