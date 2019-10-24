@@ -9,4 +9,4 @@ install:
 - chmod +x activemq
 - ./activemq start
 before_script:
-- cd Microservicio\ multimedia/Microservicio
+- cd Microservicio-multimedia/Microservicio
