@@ -8,6 +8,5 @@ install:
 - cd apache-activemq-5.15.10/bin
 - chmod +x activemq
 - ./activemq
--
 before_script:
 - cd Microservicio\ multimedia/Microservicio
