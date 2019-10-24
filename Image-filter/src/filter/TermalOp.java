@@ -65,15 +65,6 @@ public class TermalOp extends sm.image.BufferedImageOpAdapter{
         
         return dest;
     }
-    
-    public static BufferedImage filterPrepare(BufferedImage img_source){
-        ColorSpace cs = new sm.image.color.GreyColorSpace();
-        ColorConvertOp cop = new ColorConvertOp(cs, null);
-
-        BufferedImage dest = cop.filter(img_source, null);
-                    
-        return dest;
-    }
 
     /**
      * Imagen que contiene los pixeles a los que no se les aplica el filtro termal.

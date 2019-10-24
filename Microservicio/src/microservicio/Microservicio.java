@@ -78,8 +78,14 @@ public class Microservicio {
         File archivo_imagen = new File(nombre_img);
         ImageIO.write(img_source, "jpg", archivo_imagen);
         
+        // Creamos la imagen destino con el espacio de color necesario
+        ColorSpace cs = new sm.image.color.GreyColorSpace();
+        ColorConvertOp cop = new ColorConvertOp(cs, null);
+
+        BufferedImage dest = cop.filter(img_source, null);
+        
         // Aplicamos el filtro
-        TermalOp teop = new TermalOp(TermalOp.filterPrepare(img_source));
+        TermalOp teop = new TermalOp(dest);
         teop.filter(img_source, img_source);
         
         return img_source;
