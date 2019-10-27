@@ -84,10 +84,4 @@
         </or>
     </condition>
     
-    <target name="-pre-init">
-        <obfuscate>
-            <fileset dir="${build.classes.dir}"/>
-        </obfuscate>
-    </target>
-    
 </project>

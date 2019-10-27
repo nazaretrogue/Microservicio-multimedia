@@ -5,9 +5,7 @@
  */
 package filter;
 
-import java.awt.color.ColorSpace;
 import java.awt.image.BufferedImage;
-import java.awt.image.ColorConvertOp;
 import java.awt.image.WritableRaster;
 
 /**

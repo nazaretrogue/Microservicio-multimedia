@@ -7,14 +7,18 @@ package ApiRest;
  */
 import ServicioMensajeria.Sender;
 import java.io.ByteArrayOutputStream;
+import java.io.File;
+import java.io.FilenameFilter;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.PrintWriter;
+import java.util.Arrays;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import org.apache.commons.io.FileUtils;
 
 
 /**
@@ -63,6 +67,35 @@ public class API extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         processRequest(request, response);
+        
+        String nombre = (String)request.getParameter("img");
+        
+        if(nombre != null){
+            File f = new File("imagenes");
+            File[] matching_files = f.listFiles(new FilenameFilter() {
+                public boolean accept(File dir, String name) {
+                    return name.startsWith("archivo_procesado_");
+                }
+            });
+            
+            if(matching_files.length == 0)
+                response.sendError(HttpServletResponse.SC_NOT_FOUND);
+            
+            File a_buscar = new File(nombre);
+            boolean existe = Arrays.asList(matching_files).contains(a_buscar);
+            
+            if(!existe)
+                response.sendError(HttpServletResponse.SC_NOT_FOUND);
+            
+            else{
+                response.setContentType("image/jpeg");
+                response.setHeader("Content-Disposition", "filename="+a_buscar.getAbsolutePath());
+                FileUtils.copyFile(a_buscar, response.getOutputStream());
+            }
+        }
+            
+        else
+            response.sendError(HttpServletResponse.SC_NOT_FOUND);
     }
 
     /**

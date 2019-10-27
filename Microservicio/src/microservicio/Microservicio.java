@@ -71,13 +71,6 @@ public class Microservicio {
         Graphics2D g2d = img_source.createGraphics();
         g2d.drawImage(imagen, null, null);
         
-        // Establecemos el nombre de archivo para guardar la imagen en el sistema
-        String nombre_img = "archivo_"+(++num_archivo)+".jpg";
- 
-        // Guardamos la imagen en un archivo
-        File archivo_imagen = new File(nombre_img);
-        ImageIO.write(img_source, "jpg", archivo_imagen);
-        
         // Creamos la imagen destino con el espacio de color necesario
         ColorSpace cs = new sm.image.color.GreyColorSpace();
         ColorConvertOp cop = new ColorConvertOp(cs, null);
@@ -87,6 +80,13 @@ public class Microservicio {
         // Aplicamos el filtro
         TermalOp teop = new TermalOp(dest);
         teop.filter(img_source, img_source);
+        
+        // Establecemos el nombre de archivo ya procesado para guardarlo en el sistema
+        String nombre_img_procesada = "archivo_procesado_"+(num_archivo)+".jpg";
+ 
+        // Guardamos la imagen en un archivo
+        File archivo_imagen_procesada = new File(nombre_img_procesada);
+        ImageIO.write(img_source, "jpg", archivo_imagen_procesada);
         
         return img_source;
     }
