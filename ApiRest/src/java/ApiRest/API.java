@@ -25,7 +25,7 @@ import org.apache.commons.io.FileUtils;
  *
  * @author nazaret
  */
-@WebServlet(urlPatterns = {"/API"})
+@WebServlet(urlPatterns = {"/img"})
 public class API extends HttpServlet {
 
     /**
