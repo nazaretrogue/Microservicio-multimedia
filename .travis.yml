@@ -9,4 +9,6 @@ install:
 - chmod +x activemq
 - ./activemq start
 before_script:
-- cd ../../ApiRest
+- cd ../../
+- ant -Dlibs.CopyLibs.classpath=lib/org-netbeans-modules-java-j2seproject-copylibstask.jar
+- cd ApiRest
