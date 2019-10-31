@@ -18,7 +18,6 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import org.apache.commons.io.FileUtils;
 
 
 /**
@@ -45,10 +44,28 @@ public class API extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet API</title>");            
+            out.println("<title>Procesa imagen</title>");            
             out.println("</head>");
             out.println("<body>");
             out.println("<h1>Servlet API at " + request.getContextPath() + "</h1>");
+            out.println("<h1>Imagen lista para ser procesada</h1>");
+            out.println("</body>");
+            out.println("</html>");
+        }
+    }
+    
+    protected void processResponse(HttpServletResponse response, File f) 
+            throws ServletException, IOException {
+        response.setContentType("image/jpeg");
+        try (PrintWriter out = response.getWriter()) {
+            /* TODO output your page here. You may use following sample code. */
+            out.println("<!DOCTYPE html>");
+            out.println("<html>");
+            out.println("<head>");
+            out.println("<title>Imagen procesada</title>");            
+            out.println("</head>");
+            out.println("<body>");
+            out.println("<img src='"+f.getAbsolutePath()+"' alt='fotico'>");
             out.println("</body>");
             out.println("</html>");
         }
@@ -66,8 +83,6 @@ public class API extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
-        
         String nombre = (String)request.getParameter("img");
         
         if(nombre != null){
@@ -88,9 +103,7 @@ public class API extends HttpServlet {
                 response.sendError(HttpServletResponse.SC_NOT_FOUND);
             
             else{
-                response.setContentType("image/jpeg");
-                response.setHeader("Content-Disposition", "filename="+a_buscar.getAbsolutePath());
-                FileUtils.copyFile(a_buscar, response.getOutputStream());
+                processResponse(response, a_buscar);
             }
         }
             
@@ -108,9 +121,7 @@ public class API extends HttpServlet {
      */
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-        processRequest(request, response);
-        
+            throws ServletException, IOException {        
         String tipo = request.getContentType();
         InputStream imagen_full;
         
@@ -134,10 +145,14 @@ public class API extends HttpServlet {
             
             try{
                 Sender s = new Sender(bytes);
+                processRequest(request, response);
             } catch(Exception e){
                 System.err.println(e);
             }
         }
+        
+        else
+            response.sendError(HttpServletResponse.SC_UNSUPPORTED_MEDIA_TYPE);
     }
 
     /**

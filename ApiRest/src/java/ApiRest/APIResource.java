@@ -45,7 +45,6 @@ public class APIResource {
     /**
      * PUT method for updating or creating an instance of APIResource
      * @param content representation for the resource
-     * @return an HTTP response with content of the updated or created resource.
      */
     @PUT
     @Consumes("image/jpeg")
