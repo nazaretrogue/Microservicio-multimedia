@@ -1,14 +1,11 @@
-language: java
-jdk:
-- openjdk10
-- openjdk11
+language: python
+python:
+- "3.6"
+- "3.7"
 sudo: false
 install:
-- sudo apt install ant-optional
-- cd apache-activemq-5.15.10/bin
-- chmod +x activemq
-- ./activemq start
+- sudo apt-get install rabbitmq-server
+- make
 before_script:
-- cd ../../
-- ant -Dlibs.CopyLibs.classpath=lib/org-netbeans-modules-java-j2seproject-copylibstask.jar
-- cd ApiRest
+- pip install -r requirements.txt
+- make exec_mess_broker
