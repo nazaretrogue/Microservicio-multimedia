@@ -13,7 +13,7 @@
 ## Introducción al microservicio de tratamiento de imágenes
 
 Se puede leer toda la información sobre qué es, su utilidad, qué se ha utilizado
-para construirlo y su testeo en la [documentación](https://github.com/nazaretrogue/Microservicio-multimedia/blob/master/doc/Utilidad.md).
+para construirlo y su testeo en la [documentación](https://github.com/nazaretrogue/Microservicio-multimedia/blob/master/docs/Utilidad.md).
 
 ## *Buildtool*
 
