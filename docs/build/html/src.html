@@ -1,0 +1,167 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <title>src package &#8212; documentación de Tratamiento de imágenes - 1.0</title>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/language_data.js"></script>
+    <script type="text/javascript" src="_static/translations.js"></script>
+    <link rel="index" title="Índice" href="genindex.html" />
+    <link rel="search" title="Búsqueda" href="search.html" />
+    <link rel="prev" title="app module" href="app.html" />
+
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+
+
+          <div class="body" role="main">
+
+  <div class="section" id="src-package">
+<h1>src package<a class="headerlink" href="#src-package" title="Enlazar permanentemente con este título">¶</a></h1>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Enlazar permanentemente con este título">¶</a></h2>
+</div>
+<div class="section" id="module-src.filter">
+<span id="src-filter-module"></span><h2>src.filter module<a class="headerlink" href="#module-src.filter" title="Enlazar permanentemente con este título">¶</a></h2>
+<dl class="function">
+<dt id="src.filter.filtro">
+<code class="sig-prename descclassname">src.filter.</code><code class="sig-name descname">filtro</code><span class="sig-paren">(</span><em class="sig-param">img_source</em><span class="sig-paren">)</span><a class="headerlink" href="#src.filter.filtro" title="Enlazar permanentemente con esta definición">¶</a></dt>
+<dd><p>Aplica un filtro donde transforma la imagen dada en una imagen en escala
+de grises. La imagen creada se guarda con el nombre de procesado.png.</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>img_source: imagen fuente sobre la que se aplicará el filtro.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="module-src.receiver">
+<span id="src-receiver-module"></span><h2>src.receiver module<a class="headerlink" href="#module-src.receiver" title="Enlazar permanentemente con este título">¶</a></h2>
+<dl class="function">
+<dt id="src.sender.callback">
+<code class="sig-prename descclassname">src.receiver.</code><code class="sig-name descname">callback</code><span class="sig-paren">(</span><em class="sig-param">ch, method, properties, body</em><span class="sig-paren">)</span><a class="headerlink" href="#src.sender.callback" title="Enlazar permanentemente con esta definición">¶</a></dt>
+<dd><p>Recibe una imagen de la cola del bróker para enviarla a su procesamiento.
+Previamente se ha abierto una conexión con el bróker y creado una cola (si
+no existe ya) para extraer las imágenes de ahí. Se ejecuta cada vez que hay
+una imagen encolada.</p>
+<dl class="simple">
+<dt>Args:</dt>
+<dd><p>ch: canal de recepción.</p></dd>
+<dd><p>method: método de recepción de elementos de la cola.</p></dd>
+<dd><p>properties: propiedades de la recepción de la cola de la que recibe.</p></dd>
+<dd><p>body: contiene la imagen recibida de la cola.</p></dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="module-src.sender">
+<span id="src-sender-module"></span><h2>src.sender module<a class="headerlink" href="#module-src.sender" title="Enlazar permanentemente con este título">¶</a></h2>
+<dl class="function">
+<dt id="src.sender.enviar">
+<code class="sig-prename descclassname">src.sender.</code><code class="sig-name descname">enviar</code><span class="sig-paren">(</span><em class="sig-param">img_src</em><span class="sig-paren">)</span><a class="headerlink" href="#src.sender.enviar" title="Enlazar permanentemente con esta definición">¶</a></dt>
+<dd><p>Recibe una imagen de una petición HTTP que envía a la cola del bróker de
+mensajería a la espera de ser procesada. Para ello, abre una conexión y
+crea una cola (si no está ya creada) donde almacena la imagen.</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>img_src: imagen recibida en la petición HTTP.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="module-src">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-src" title="Enlazar permanentemente con este título">¶</a></h2>
+</div>
+</div>
+
+
+          </div>
+
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">Tratamiento de imágenes</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navegación</h3>
+<p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">Microservicio multimedia</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="app.html">app module</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">src package</a></li>
+</ul>
+</li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+  <li><a href="modules.html">Microservicio multimedia</a><ul>
+      <li>Previous: <a href="app.html" title="capítulo anterior">app module</a></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Búsqueda rápida</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Ir a" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2019, Nazaret Román Guerrero.
+
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 2.2.1</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+
+      |
+      <a href="_sources/src.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+
+
+
+  </body>
+</html>

@@ -1,0 +1,149 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <title>app module &#8212; documentación de Tratamiento de imágenes - 1.0</title>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/language_data.js"></script>
+    <script type="text/javascript" src="_static/translations.js"></script>
+    <link rel="index" title="Índice" href="genindex.html" />
+    <link rel="search" title="Búsqueda" href="search.html" />
+    <link rel="next" title="src package" href="src.html" />
+    <link rel="prev" title="Microservicio multimedia" href="modules.html" />
+
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+
+
+          <div class="body" role="main">
+
+  <div class="section" id="app-module">
+<h1>app module<a class="headerlink" href="#app-module" title="Enlazar permanentemente con este título">¶</a></h1>
+</div>
+<div class="section" id="app-module">
+<span id="app-module"></span><h2>app module<a class="headerlink" href="#app-module" title="Enlazar permanentemente con este título">¶</a></h2>
+<dl class="function">
+<dt id="app.img()">
+<code class="sig-prename descclassname">app.</code><code class="sig-name descname">img</code><span class="sig-paren">(</span><em class="sig-param"></em><span class="sig-paren">)</span><a class="headerlink" href="#app-module" title="Enlazar permanentemente con esta definición">¶</a></dt>
+<dd><p>Define la ruta a la que se enviarán imágenes para ser procesadas.
+Los métodos aceptados son PUT y POST, que requieren de una imagen al enviar
+la petición. Se devuelve un 200 si todo ha ido bien.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="app-module">
+<span id="app-module"></span><h2>app module<a class="headerlink" href="#app-module" title="Enlazar permanentemente con este título">¶</a></h2>
+<dl class="function">
+<dt id="app.status()">
+<code class="sig-prename descclassname">app.</code><code class="sig-name descname">status</code><span class="sig-paren">(</span><em class="sig-param"></em><span class="sig-paren">)</span><a class="headerlink" href="#app-module" title="Enlazar permanentemente con esta definición">¶</a></dt>
+<dd><p>Define la ruta de comprobación de funcionamiento del servidor.
+Se accede mediante un GET y se devuelve un 200 si todo ha ido bien.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="app-module">
+<span id="app-module"></span><h2>app module<a class="headerlink" href="#app-module" title="Enlazar permanentemente con este título">¶</a></h2>
+<dl class="function">
+<dt id="app.perfil_usuario(archivo)">
+<code class="sig-prename descclassname">app.</code><code class="sig-name descname">perfil_usuario</code><span class="sig-paren">(</span><em class="sig-param">archivo</em><span class="sig-paren">)</span><a class="headerlink" href="#app-module" title="Enlazar permanentemente con esta definición">¶</a></dt>
+<dd><p>Define la ruta para devolver una imagen. Se accede con el método GET y
+devuelve la imagen dada por el string introducido.</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>archivo: nombre del archivo que se desea recuperar.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+
+          </div>
+
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">Tratamiento de imágenes</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navegación</h3>
+<p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">Microservicio multimedia</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">app module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="src.html">src package</a></li>
+</ul>
+</li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+  <li><a href="modules.html">Microservicio multimedia</a><ul>
+      <li>Previous: <a href="modules.html" title="capítulo anterior">Microservicio multimedia</a></li>
+      <li>Next: <a href="src.html" title="próximo capítulo">src package</a></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Búsqueda rápida</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Ir a" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2019, Nazaret Román Guerrero.
+
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 2.2.1</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+
+      |
+      <a href="_sources/app.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+
+
+
+  </body>
+</html>
