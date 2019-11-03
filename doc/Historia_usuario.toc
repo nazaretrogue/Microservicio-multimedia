@@ -1,4 +1,0 @@
-\babel@toc {spanish}{}
-\babel@toc {spanish}{}
-\contentsline {section}{\numberline {1}Descripci\IeC {\'o}n general}{2}{section.1}
-\contentsline {section}{\numberline {2}Requisitos funcionales}{2}{section.2}

@@ -7,6 +7,17 @@ channel = connection.channel()
 channel.queue_declare(queue='imagenes')
 
 def callback(ch, method, properties, body):
+    """Recibe una imagen de la cola del bróker para enviarla a su procesamiento.
+    Previamente se ha abierto una conexión con el bróker y creado una cola (si
+    no existe ya) para extraer las imágenes de ahí. Se ejecuta cada vez que hay
+    una imagen encolada.
+
+    Args:
+        ch: canal de recepción.
+        method: método de recepción de elementos de la cola.
+        properties: propiedades de la recepción de la cola de la que recibe.
+        body: contiene la imagen recibida de la cola.
+    """
     print("Recibida imagen de la cola de procesamiento")
     filtro(body)
 

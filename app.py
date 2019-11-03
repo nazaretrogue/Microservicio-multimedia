@@ -4,17 +4,25 @@ from src.sender import enviar
 
 app = Flask(__name__, template_folder="templates")
 
+spec = APISpec(title="Tratamiento de imagenes", plugins=[FlaskPlugin(), MarshmallowPlugin()],)
+
 @app.route('/', methods=['POST', 'PUT'])
 def img():
-    #img = request.files.get('data').filename
-    img = request.files.get('data').stream
-    enviar(img)
+    """Define la ruta a la que se enviarán imágenes para ser procesadas.
+    Los métodos aceptados son PUT y POST, que requieren de una imagen al enviar
+    la petición. Se devuelve un 200 si todo ha ido bien.
+    """
+    img = request.files['data']
+    enviar(img.read())
 
     return render_template('home.html')
 
-@app.route('/status')
+@app.route('/status', methods=['GET'])
 def status():
-    body = {'status': 'OK', 'Code': 200, 'Instructions': 'post an image to /, get the image from /img/<file_name>_procesado.png'}
+    """Define la ruta de comprobación de funcionamiento del servidor.
+    Se accede mediante un GET y se devuelve un 200 si todo ha ido bien.
+    """
+    body = {'status': 'OK', 'Code': 200, 'Instructions': 'post an image to /, get the image from /img/procesado.png'}
     response = jsonify(body)
     response.status_code = 200
 
@@ -22,6 +30,12 @@ def status():
 
 @app.route('/img/<archivo>', methods=['GET'])
 def perfil_usuario(archivo):
+    """Define la ruta para devolver una imagen. Se accede con el método GET y
+    devuelve la imagen dada por el string introducido.
+
+    Args:
+        archivo: nombre del archivo que se desea recuperar.
+    """
     if os.path.isfile(archivo):
         dir_path = os.path.dirname(os.path.realpath(archivo))
         dir_path = dir_path + "/" + archivo

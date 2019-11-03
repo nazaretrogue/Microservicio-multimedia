@@ -1,5 +1,3 @@
-HOME=.
-
 all: install create_environment install_tester
 
 install:
@@ -15,7 +13,7 @@ install_tester:
 	pip install pytest-virtualenv
 
 exec_mess_broker:
-	python src/receiver.py
+	python src/receiver.py&
 
 start:
 

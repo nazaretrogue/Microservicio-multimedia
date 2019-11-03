@@ -1,8 +1,14 @@
 from PIL import Image
+import io
 import os
 
-def filtro(nombre_img_source):
-    #nombre_orig = img_source.filename
-    nombre = str(os.path.splitext(nombre_img_source)[0]) + "_procesado.png"
-    img = Image.open(nombre_img_source).convert('LA')
-    img.save(nombre)
+def filtro(img_source):
+    """Aplica un filtro donde transforma la imagen dada en una imagen en escala
+    de grises. La imagen creada se guarda con el nombre de procesado.png.
+
+    Args:
+        img_source: imagen fuente sobre la que se aplicará el filtro.
+    """
+    tmp = Image.open(io.BytesIO(bytearray(img_source)))
+    img_dest = tmp.convert('LA')
+    img_dest.save("procesado.png")

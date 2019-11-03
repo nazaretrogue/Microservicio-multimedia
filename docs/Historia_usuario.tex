@@ -89,7 +89,7 @@ Este documento está basado en un caso hipotético de que un cliente acuda a nos
 
 La empresa de gestión multimedia, \textit{Instegrom}, creadora de la famosa red social con ese mismo nombre, desea un nuevo filtro para su red social, pero en lugar de integrarlo en la aplicación, desean hacer un cambio radical a la forma de actuación de la empresa y utilizar la computación en la nube. Para ello, recurren a nosotros en busca de ayuda.\\
 
-El cliente pide, como un comienzo para su nueva política de empresa, un microservicio en la nube que sea capaz de recibir una imagen en formato \textsc{.jpeg} o \textsc{.jpg} y la procese con un filtro, dejando las zonas que tienen un color cálido igual y sustituyendo las demás partes por la misma imagen pero en escala de grises.
+El cliente pide, como un comienzo para su nueva política de empresa, un microservicio en la nube que sea capaz de recibir una imagen en formato \textsc{.jpeg}, \textsc{.jpg} o \textsc{.png} y la procese con un filtro, dejando la misma imagen pero en escala de grises.
 
 \section{Requisitos funcionales}
 Una vez que tenemos los rasgos generales de lo que buscan, se han definido tres requisitos funcionales principales, que pueden ir aumentando en el caso de que el cliente desee añadir algun extra al microservicio. Los requisitos son los que siguen:
@@ -97,7 +97,7 @@ Una vez que tenemos los rasgos generales de lo que buscan, se han definido tres 
 \begin{itemize}
 	\item RF1. El microservicio será capaz de recibir una imagen a través de peticiones \textsc{HTTP} o \textsc{HTTPS}.
 	\item RF2. La imagen recibida será procesada aplicando un filtro.
-	\item RF3. El filtro mantendrá las zonas con un valor igual o superior a 128 en la banda correspondiente al rojo en una imagen en formato RGB o RGBA.
+	\item RF3. El filtro cambiará la imagen y la transformará en una imagen en escala de grises.
 \end{itemize}
 
 \end{document}
