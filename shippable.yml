@@ -5,7 +5,8 @@ python:
 build:
     ci:
         - sudo apt-get install rabbitmq-server
-        - make
+        - make process_mng
+        - make install_tester
         - pip install -r requirements.txt
         - make start
         - make test
