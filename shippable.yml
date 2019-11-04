@@ -7,4 +7,5 @@ build:
         - sudo apt-get install rabbitmq-server
         - make
         - pip install -r requirements.txt
-        - make exec_mess_broker
+        - make start
+        - make test

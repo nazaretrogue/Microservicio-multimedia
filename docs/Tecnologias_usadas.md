@@ -106,20 +106,25 @@ aplicación.
 ### Travis CI
 
 El archivo de configuración de *Travis* indica qué lenguaje (directiva ***language***)
-y en qué versiones se va a testear la aplicación (directiva ***python***). Como
-se tiene que utilizar un bróker de mensajería en el microservicio, se instala
+y en qué versiones se va a testear la aplicación (directiva ***python***).
+
+Antes de comenzar a explicar este archivo o el de *Shippable*, cabe destacar que
+no se ha definido ningún puerto mediante variables de entorno ya que Flask establece
+un puerto por defecto, el 5000, por lo que no ha sido necesario establecerlo.
+
+Como se tiene que utilizar un bróker de mensajería en el microservicio, se instala
 dicho bróker en *Travis* (concretamente se instala *RabbitMQ Server*
 que todo funcione correctamente, con la directiva ***install***). Además, debe
 ejecutar el *Makefile* para que se instale el entorno virtual y se ejecuten los tests.
 También, **antes de ejecutar el test** (directiva ***before_script*** en el
 archivo), debe instalar los módulos de Python indicados en el archivo
 [requirements.txt](https://github.com/nazaretrogue/Microservicio-multimedia/blob/master/requirements.txt).
-Una vez hecho esto, se lanza el receiver del bróker de mensajería para que esté
-a la escucha de peticiones encoladas que atender. Por último, la ejecución (directiva
-***script***) que inicia la aplicación y el receiver, pasa los tests y elimina
-la aplicación el receiver una vez que ha terminado la ejecución de dichos tests.
 
-Además, se ha prohibido que el microservicio se ejecute con permisos de administrador
+Una vez hecho esto, la ejecución (directiva ***script***) que inicia la aplicación
+y el receiver, pasa los tests y elimina la aplicación el receiver una vez que ha
+terminado la ejecución de dichos tests.
+
+Por último, se ha prohibido que el microservicio se ejecute con permisos de administrador
 (directiva ***sudo***, esto no significa que la instalación de dependencias previa
 no se pueda hacer, se ha prohibido el uso del microservicio con sudo, no el uso
 en general de sudo).
@@ -154,9 +159,10 @@ En este caso, el archivo *shippable.yml* indica el lenguaje (mediante la
 directiva ***language***) y las versiones de Python en las que se va a testear
 el microservicio (indicadas con la directiva ***python***). Al igual que ocurre
 en *Travis*, hay que indicarle que instale ciertas cosas antes del testeo, como
-el bróker, los módulos del lenguaje o la ejecución previa del receiver del bróker
-para escuchar las peticiones que pueda haber (todo esto se indica en la directiva
-***build: ci:***). Solo entonces, ejecutará los tests.
+que instale el servidor del bróker de mensajería, instale el gestor de procesos y
+la herramienta para construir el entorno virtual, construya dicho entorno e instale
+la herramienta para los tests (todo esto se indica en la directiva
+***build: ci:***). Solo entonces, se iniciarán los servicios y se ejecutarán los tests.
 
 El archivo de *Shippable* es este:
 
@@ -170,7 +176,8 @@ build:
         - sudo apt-get install rabbitmq-server
         - make
         - pip install -r requirements.txt
-        - make exec_mess_broker
+        - make start
+        - make test
 ```
 
 Se han utilizado este servicios de integración continua porque son fáciles de configurar y
@@ -180,11 +187,24 @@ correctamente.
 
 ## ¿Qué hace el test?
 
-En el test implementado se comprueba que la imagen que se va a utilizar para
-aplicar el filtro está en el formato y el espacio de color correctos (.jpeg/.jpg
-y RGB respectivamente). Actualmente solo se comprueba una imagen extrayéndola de
-la URL; una vez que se avance más en el proyecto, la imagen que se comprobará será
-la que se envíe en la propia petición HTTP, por lo que habrá que modificar ligeramente
-la implementación del test.
+Se comprueban dos cosas diferentes en los tests funcionales: primero, que el
+servicio está funcionando correctamente (hace un get comprobando el status).
+
+El segundo, comprueba que devuelve correctamente una imagen ya procesada.
+
+Debería haber un tercer test que comprobara que se envía correctamente una imagen
+para ser procesada. No obstante, utilizar un test era problemático: la codificación
+de la multimedia con un objeto request en Python no era aceptado por los procedimientos
+internos del bróker de mensajería. No obstante, utilizando el comando *curl*
+desde un directorio donde esté la imagen a enviar funciona correctamente. Por
+ejemplo con el siguiente:
+
+```bash
+curl -i -H "Content-Type: multipart/form-data" -F "data=@fry.jpg" -XPOST localhost:5000/
+```
 
 ## Bibliografía
+
+* [pm2 y Python](https://medium.com/@gokhang1327/deploying-flask-app-with-pm2-on-ubuntu-server-18-04-992dfd808079)
+* [RabbitMQ y pika](https://paulcrickard.wordpress.com/2013/04/17/messaging-in-python-with-rabbitmq-and-pika/)
+* [Documentando con Sphinx](https://developer.ridgerun.com/wiki/index.php/How_to_generate_sphinx_documentation_for_python_code_running_in_an_embedded_system)
