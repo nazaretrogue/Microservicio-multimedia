@@ -25,7 +25,8 @@ buildtool: Makefile
 
 Toda la documentación se ha generado en forma de HTML a través de *sphinx*, un
 generador semi-automático de documentación para Python.Para descargarla en forma
-de HTML, se accede a los enlaces y se descarga desde ahí.
+de HTML, se accede a los enlaces y se descarga desde ahí para poder visualizarlos.
+Si se vieran directamente en github se verían como un html en crudo.
 
 * [Documentación de la API](https://github.com/nazaretrogue/Microservicio-multimedia/blob/master/docs/build/html/app.html)
 * [Documentación de los tests](https://github.com/nazaretrogue/Microservicio-multimedia/blob/master/docs/build/html/tests.html)
