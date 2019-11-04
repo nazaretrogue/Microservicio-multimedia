@@ -151,9 +151,11 @@ script:
 
 Se ha incluido un segundo sistema de integración continua, [Shippable](https://app.shippable.com/),
 donde se ha configurado el archivo [*shippable.yml*](https://github.com/nazaretrogue/Microservicio-multimedia/blob/master/shippable.yml)
-para que, al igual que con *Travis*, haga tests en dos versiones distintas del lenguaje
-(en ambos sistemas se prueban las mismas versiones, *3.6* y *3.7*, por los motivos
-explicados anteriormente).
+En este caso, solo se prueba la versión 3.7.0 de Python, debido a que hay distintas
+versiones disponibles de los lenguajes según el *node pool* que se establezca.
+Cualquier otra versión de Python y la versión 3.7.* cambian de pool, por lo que
+no puedo probar más de una versión. Solo está permitido tener un *node pool* a
+menos que pagues por tener más.
 
 En este caso, el archivo *shippable.yml* indica el lenguaje (mediante la
 directiva ***language***) y las versiones de Python en las que se va a testear
