@@ -187,6 +187,10 @@ de utilizar con GitHub. Además se ha incluido un *badge* en el README del repos
 de ambos para poder comprobar de manera visual que ambos sistemas están funcionando
 correctamente.
 
+En el caso de Shippable, no funciona debido a que no encuentra el path a la versión
+de Python. He re-abierto un [issue](https://github.com/Shippable/support/issues/4978)
+en GitHub preguntando sobre el fallo pero aún estoy esperando una respuesta.
+
 ## ¿Qué hace el test?
 
 Se comprueban dos cosas diferentes en los tests funcionales: primero, que el
