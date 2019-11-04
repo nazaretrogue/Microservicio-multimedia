@@ -28,5 +28,5 @@ generador semi-automático de documentación para Python.Para descargarla en for
 de HTML, se accede a los enlaces y se descarga desde ahí.
 
 * [Documentación de la API](https://github.com/nazaretrogue/Microservicio-multimedia/blob/master/docs/build/html/app.html)
-* [Documentación de los tests](https://github.com/nazaretrogue/Microservicio-multimedia/blob/master/docs/build/html/app.html)
+* [Documentación de los tests](https://github.com/nazaretrogue/Microservicio-multimedia/blob/master/docs/build/html/tests.html)
 * [Documentación del filtro, el sender y el receiver](https://github.com/nazaretrogue/Microservicio-multimedia/blob/master/docs/build/html/src.html)
