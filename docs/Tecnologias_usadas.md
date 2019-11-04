@@ -30,12 +30,78 @@ desde *GitHub* y darle acceso al repo que se va a probar.
 
 La herramienta de construcción utilizada es el *makefile*, una herramienta de
 construcción genérica, que se puede usar en cualquier lenguaje y con una
-sintaxis sencilla basada en etiquetas.
+sintaxis sencilla basada en etiquetas. El contenido es el siguiente:
 
 ### *Makefile*
 
 ```bash
+all: process_mng install create_environment install_tester
+
+process_mng:
+	npm install pm2@latest -g
+
+install:
+	pip install virtualenv
+
+create_environment:
+	( \
+		chmod +x script.sh; \
+		./script.sh; \
+	)
+
+install_tester:
+	pip install pytest-virtualenv
+
+start:
+	pm2 start src/receiver.py
+	pm2 start app.py
+
+stop:
+	pm2 stop src/receiver.py
+	pm2 stop app.py
+
+restart:
+	pm2 restart src/receiver.py
+	pm2 restart app.py
+
+reload:
+	pm2 reload src/receiver.py
+	pm2 reload app.py
+
+delete:
+	pm2 delete src/receiver.py
+	pm2 delete app.py
+
+test:
+	pytest
 ```
+
+Vamos a explicar qué hace cada etiqueta.
+
+* *all*: ejecuta las etiquetas *process_mng*, *install*, *create_environment* e
+*install_tester* cuando se ejecuta el comando **make**.
+* *process_mng*: instala el gestor de procesos para mantener viva la aplicación
+que se despliega.
+* *install*: instala el entorno virtual de Python.
+* *create_environment*: da permisos de ejecución y ejecuta un script de bash que
+crea el entorno virtual y lo activa. Tiene que hacerse así porque cada orden de
+un makefile se ejecuta en un terminal diferente, es decir, que no puede depender
+una orden de otra. Por ese motivo he tenido que crear el entorno y activarlo en
+un script de bash aparte donde sí se pueden ejecutar órdenes dependientes de otras.
+Se puede ver el script de bash en este [enlace](https://github.com/nazaretrogue/Microservicio-multimedia/blob/master/script.sh).
+* *install_tester*: instala la herramienta pytest para poder ejecutar los tests
+de la aplicación.
+* *start*: lanza la aplicación mediante el gestor de procesos pm2. Se debe lanzar
+el receiver del bróker de mensajería para que reciba peticiones y la propia aplicación,
+en este orden.
+* *stop*: detiene los procesos que se han lanzado, tanto el receiver como la aplicación
+en sí.
+* *restart*: detiene e inicia de nuevo el receiver y la aplicación.
+* *reload*: recarga el receiver y la aplicación sin deterla; vuelve a cargar paquetes,
+dependencias... en memoria pero sin parar los procesos.
+* *delete*: elimina los procesos lanzados del gestor de procesos, el receiver y la
+aplicación.
+* *test*: ejecuta los tests con la herramienta pytest de Python.
 
 ### Travis CI
 

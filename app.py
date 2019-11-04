@@ -4,8 +4,6 @@ from src.sender import enviar
 
 app = Flask(__name__, template_folder="templates")
 
-spec = APISpec(title="Tratamiento de imagenes", plugins=[FlaskPlugin(), MarshmallowPlugin()],)
-
 @app.route('/', methods=['POST', 'PUT'])
 def img():
     """Define la ruta a la que se enviarán imágenes para ser procesadas.

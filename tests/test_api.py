@@ -1,5 +1,5 @@
-import pytest
-import requests
+import pytest, requests, base64
+from io import BytesIO
 
 @pytest.mark.status
 def test_status():
@@ -14,28 +14,27 @@ def test_status():
     assert response.status_code == 200, "Fallo, respuesta no correcta"
 
 @pytest.mark.get
-def test_get(image):
+def test_get(procesada):
     """Testea la devolución de una imagen ya procesada. Si todo está correcto,
     devuelve un 200.
 
     Args:
-        image: ruta de la imagen.
+        procesada: ruta de la imagen.
     """
-    url = 'http://localhost:5000/img/' + image
+    url = 'http://localhost:5000/img/' + procesada
     response = requests.get(url)
 
     assert response.status_code == 200, "Fallo, respuesta no correcta"
 
-@pytest.mark.post
-def test_post(image):
-    """Testea el envío de una imagen para que sea procesada. Si todo está correcto,
-    devuelve un 200.
+#@pytest.mark.post
+#def test_post(image):
+#    """Testea el envío de una imagen para que sea procesada. Si todo está correcto,
+#    devuelve un 200.
 
-    Args:
-        image: ruta de la imagen.
-    """
-    header = {'Content-type': 'multipart/form-data'}
-    file = {'data': open(image)}
-    response = requests.post('http://localhost:5000/', headers=header, files=file)
+#    Args:
+#        image: ruta de la imagen.
+#    """
+#    header = {'Content-type': 'application/json'}
+#    response = requests.post('http://localhost:5000/', headers=header, json={"data": "http://images.uncyclomedia.co/inciclopedia/es/1/13/Frymiradaasesina.jpg"})
 
-    assert response.status_code == 200, "Fallo, respuesta no correcta"
+#    assert response.status_code == 200, "Fallo, respuesta no correcta"
