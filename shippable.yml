@@ -3,7 +3,7 @@ python:
     - 3.7.0
 build:
     pre_ci_boot:
-        image_tag: v6.8.4
+        image_tag: v6.7.4
     ci:
         - sudo apt-get install rabbitmq-server
         - make process_mng
