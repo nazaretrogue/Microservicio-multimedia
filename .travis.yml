@@ -8,4 +8,6 @@ install:
 - make
 before_script:
 - pip install -r requirements.txt
-- make exec_mess_broker
+script:
+- make start
+- make test

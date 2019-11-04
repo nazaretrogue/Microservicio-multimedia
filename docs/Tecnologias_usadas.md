@@ -115,7 +115,9 @@ También, **antes de ejecutar el test** (directiva ***before_script*** en el
 archivo), debe instalar los módulos de Python indicados en el archivo
 [requirements.txt](https://github.com/nazaretrogue/Microservicio-multimedia/blob/master/requirements.txt).
 Una vez hecho esto, se lanza el receiver del bróker de mensajería para que esté
-a la escucha de peticiones encoladas que atender.
+a la escucha de peticiones encoladas que atender. Por último, la ejecución (directiva
+***script***) que inicia la aplicación y el receiver, pasa los tests y elimina
+la aplicación el receiver una vez que ha terminado la ejecución de dichos tests.
 
 Además, se ha prohibido que el microservicio se ejecute con permisos de administrador
 (directiva ***sudo***, esto no significa que la instalación de dependencias previa
@@ -135,7 +137,9 @@ install:
 - make
 before_script:
 - pip install -r requirements.txt
-- make exec_mess_broker
+script:
+- make start
+- make test
 ```
 
 ### Shippable CI
