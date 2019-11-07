@@ -21,7 +21,7 @@ para construirlo y su testeo en la [documentación](https://github.com/nazaretro
 buildtool: Makefile
 ```
 
-La documentación de la buildtool está en este [enlace](https://github.com/nazaretrogue/Microservicio-multimedia/blob/master/docs/Tecnologias_usadas.md).
+La documentación de la buildtool está en este [enlace](https://github.com/nazaretrogue/Microservicio-multimedia/blob/master/docs/Tecnologias_usadas.md#Makefile).
 
 ## Documentación de la API y los tests
 
