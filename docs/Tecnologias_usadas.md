@@ -171,8 +171,7 @@ El archivo de *Shippable* es este:
 ```yaml
 language: python
 python:
-    - 3.6.5
-    - 3.7.2
+    - "3.7"
 build:
     ci:
         - sudo apt-get install rabbitmq-server
