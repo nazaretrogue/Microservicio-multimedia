@@ -39,8 +39,9 @@ test:
 	pytest
 
 heroku:
+	pm2 start src/receiver.py
 	sudo snap install heroku --classic
 	heroku login
-	heroku apps:create tratamientoimg --buildpack heroku/python
+	heroku apps:create tratamientoimg
 	git push heroku master
 	
