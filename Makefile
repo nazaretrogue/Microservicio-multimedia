@@ -38,7 +38,7 @@ delete:
 test:
 	pytest
 
-heroku:
+heroku: create_environment
 	sudo snap install heroku --classic
 	heroku login
 	heroku apps:create tratamientoimg
