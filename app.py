@@ -4,17 +4,21 @@ from src.sender import enviar
 
 app = Flask(__name__, template_folder="templates")
 
-@app.route('/', methods=['POST', 'PUT'])
+@app.route('/', methods=['GET', 'POST', 'PUT'])
 def img():
     """Define la ruta a la que se enviarán imágenes para ser procesadas.
     Los métodos aceptados son PUT y POST, que requieren de una imagen al enviar
     la petición. Se devuelve un 200 si todo ha ido bien.
     """
-    img = request.files['data']
-    enviar(img.read())
+    if request.method == 'POST' or request.method == 'PUT':
+        img = request.files['data']
+        enviar(img.read())
 
-    return render_template('home.html')
+        return render_template('home.html')
 
+    else:
+        return "Bienvenido al microservicio de tratamiento de imágenes"
+        
 @app.route('/status', methods=['GET'])
 def status():
     """Define la ruta de comprobación de funcionamiento del servidor.
