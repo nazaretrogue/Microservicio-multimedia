@@ -38,10 +38,12 @@ delete:
 test:
 	pytest
 
-heroku: create_environment
+heroku:
 	sudo snap install heroku --classic
 	heroku login
 	heroku apps:create tratamientoimg
 	heroku addons:create cloudamqp
 	git push heroku master
-	
+
+deploy: create_environment
+	gunicorn app:app

@@ -51,4 +51,4 @@ def error_404(error):
     return "Error 404, page not found. We can't find the page or file you are looking for", 404
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(host='0.0.0.0', port=int(os.environ.get('POST', 5000)), debug=True)
