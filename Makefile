@@ -38,9 +38,9 @@ delete:
 test:
 	pytest
 
-heroku:
+heroku: start
 	sudo snap install heroku --classic
 	heroku login
-	heroku apps:create tratamientoimg
+	heroku apps:create tratamientoimg --buildpack heroku/python
 	git push heroku master
 	
