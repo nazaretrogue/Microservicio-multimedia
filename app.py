@@ -1,7 +1,6 @@
 from flask import Flask, render_template, request, redirect, url_for, jsonify
 import os, sys
 from src.sender import enviar
-from celery import Celery
 
 app = Flask(__name__, template_folder="templates")
 
