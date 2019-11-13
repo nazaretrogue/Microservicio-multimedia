@@ -34,7 +34,7 @@ sintaxis sencilla basada en etiquetas. El contenido es el siguiente:
 
 ### *Makefile*
 
-```bash
+```make
 all: process_mng install create_environment install_tester
 
 process_mng:
@@ -74,6 +74,17 @@ delete:
 
 test:
 	pytest
+
+heroku:
+	sudo snap install heroku --classic
+	heroku login
+	heroku apps:create tratamientoimg
+	heroku addons:create cloudamqp:lemur
+	heroku config:set HEROKU=1
+	git push heroku master
+
+deploy: create_environment
+	gunicorn app:app
 ```
 
 Vamos a explicar qué hace cada etiqueta.
@@ -102,6 +113,12 @@ dependencias... en memoria pero sin parar los procesos.
 * *delete*: elimina los procesos lanzados del gestor de procesos, el receiver y la
 aplicación.
 * *test*: ejecuta los tests con la herramienta pytest de Python.
+* *heroku*: ejecuta las intrucciones necesarias para crear la aplicación en *Heroku*.
+La explicación a dichas instrucciones está [aquí](https://github.com/nazaretrogue/Microservicio-multimedia/blob/master/docs/PaaS.md)
+* *deploy*: despliega la aplicación principal en *Heroku*. Esta directiva es llamada
+desde el [Procfile](https://github.com/nazaretrogue/Microservicio-multimedia/blob/master/Procfile).
+Para desplegarla, depende de que el entorno virtual esté creado. Cuando está creado
+se ejecuta *Gunicorn*, un servidor de interfaz puerta-enlace para Python.
 
 ### Travis CI
 

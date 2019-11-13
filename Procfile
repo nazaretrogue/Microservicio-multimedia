@@ -1,2 +1,2 @@
 web: make deploy
-worker: python src/receiver.py
+worker: python src/receiver.py 

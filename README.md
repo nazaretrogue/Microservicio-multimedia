@@ -23,6 +23,12 @@ buildtool: Makefile
 
 La documentación de la buildtool está en este [enlace](https://github.com/nazaretrogue/Microservicio-multimedia/blob/master/docs/Tecnologias_usadas.md#Makefile).
 
+## Despliegue
+
+[Despliegue](https://tratamientoimg.herokuapp.com/): https://tratamientoimg.herokuapp.com/
+
+La documentación sobre el despliegue está [aquí](https://github.com/nazaretrogue/Microservicio-multimedia/blob/master/docs/PaaS.md)
+
 ## Documentación de la API y los tests
 
 Toda la documentación se ha generado en forma de HTML a través de *sphinx*, un
