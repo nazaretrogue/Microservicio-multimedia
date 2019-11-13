@@ -25,9 +25,9 @@ La documentación de la buildtool está en este [enlace](https://github.com/naza
 
 ## Despliegue
 
-[Despliegue](https://tratamientoimg.herokuapp.com/): https://tratamientoimg.herokuapp.com/
+Despliegue: https://tratamientoimg.herokuapp.com/
 
-La documentación sobre el despliegue está [aquí](https://github.com/nazaretrogue/Microservicio-multimedia/blob/master/docs/PaaS.md)
+La documentación sobre el despliegue está [aquí](https://github.com/nazaretrogue/Microservicio-multimedia/blob/master/docs/PaaS.md).
 
 ## Documentación de la API y los tests
 
