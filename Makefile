@@ -43,8 +43,8 @@ heroku:
 	heroku login
 	heroku apps:create tratamientoimg
 	heroku addons:create cloudamqp:lemur
-	heroku config:set HEROKU=1
 	git push heroku master
 
 deploy: create_environment
+	heroku config:set HEROKU=1
 	gunicorn app:app
