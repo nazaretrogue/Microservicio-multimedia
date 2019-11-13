@@ -1,7 +1,15 @@
-import pika
+import pika, os
 from filter import filtro
 
-connection = pika.BlockingConnection(pika.ConnectionParameters('localhost'))
+if not 'HEROKU' in os.environ:
+    connection = pika.BlockingConnection(pika.ConnectionParameters('localhost'))
+
+else:
+    url = os.environ.get('CLOUDAMQP_URL', 'amqp://guest:guest@localhost:5672/%2f')
+    params = pika.URLParameters(url)
+    connection = pika.BlockingConnection(params)
+
+#connection = pika.BlockingConnection(pika.ConnectionParameters('localhost'))
 channel = connection.channel()
 
 channel.queue_declare(queue='imagenes')

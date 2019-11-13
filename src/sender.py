@@ -1,4 +1,4 @@
-import pika
+import pika, os
 import logging
 
 def enviar(img_src):
@@ -9,8 +9,15 @@ def enviar(img_src):
     Args:
         img_src: imagen recibida en la petición HTTP.
     """
-    logging.basicConfig()
-    connection = pika.BlockingConnection(pika.ConnectionParameters('localhost'))
+    if not 'HEROKU' in os.environ:
+        logging.basicConfig()
+        connection = pika.BlockingConnection(pika.ConnectionParameters('localhost'))
+
+    else:
+        url = os.environ.get('CLOUDAMQP_URL', 'amqp://guest:guest@localhost:5672/%2f')
+        params = pika.URLParameters(url)
+        connection = pika.BlockingConnection(params)
+
     channel = connection.channel()
 
     channel.queue_declare(queue='imagenes')

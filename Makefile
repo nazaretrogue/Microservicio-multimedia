@@ -42,7 +42,8 @@ heroku:
 	sudo snap install heroku --classic
 	heroku login
 	heroku apps:create tratamientoimg
-	heroku addons:create cloudamqp
+	heroku addons:create cloudamqp:lemur
+	heroku config:set HEROKU=1
 	git push heroku master
 
 deploy: create_environment
