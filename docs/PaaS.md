@@ -2,9 +2,9 @@
 
 ## Tabla de contenidos
 <!--ts-->
-    * [Creación de la app en Heroku](#Creacion-de-la-app-en-Heroku)
-    * [Despliegue](#Despliegue)
-    * [Bibliografía](#Bibliografia)
+   * [Creación de la app en Heroku](#Creacion-de-la-app-en-Heroku)
+   * [Despliegue](#Despliegue)
+   * [Bibliografía](#Bibliografia)
 <!--te-->
 
 ## Creación de la app en Heroku
