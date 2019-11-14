@@ -40,3 +40,4 @@ Si se vieran directamente en github se verían como un html en crudo.
 * [Documentación de la API](https://nazaretrogue.github.io/Microservicio-multimedia/build/html/app.html)
 * [Documentación de los tests](https://nazaretrogue.github.io/Microservicio-multimedia/build/html/tests.html)
 * [Documentación del filtro, el sender y el receiver](https://nazaretrogue.github.io/Microservicio-multimedia/build/html/src.html)
+* [Toda la documentación extra](https://nazaretrogue.github.io/Microservicio-multimedia/)
