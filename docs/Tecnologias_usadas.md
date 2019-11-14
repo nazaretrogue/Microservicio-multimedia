@@ -108,13 +108,13 @@ en este orden.
 * *stop*: detiene los procesos que se han lanzado, tanto el receiver como la aplicación
 en sí.
 * *restart*: detiene e inicia de nuevo el receiver y la aplicación.
-* *reload*: recarga el receiver y la aplicación sin deterla; vuelve a cargar paquetes,
+* *reload*: recarga el receiver y la aplicación sin detenerla; vuelve a cargar paquetes,
 dependencias... en memoria pero sin parar los procesos.
 * *delete*: elimina los procesos lanzados del gestor de procesos, el receiver y la
 aplicación.
 * *test*: ejecuta los tests con la herramienta pytest de Python.
-* *heroku*: ejecuta las intrucciones necesarias para crear la aplicación en *Heroku*.
-La explicación a dichas instrucciones está [aquí](https://github.com/nazaretrogue/Microservicio-multimedia/blob/master/docs/PaaS.md)
+* *heroku*: ejecuta las instrucciones necesarias para crear la aplicación en *Heroku*.
+La explicación a dichas instrucciones está [aquí](https://github.com/nazaretrogue/Microservicio-multimedia/blob/master/docs/PaaS.md).
 * *deploy*: despliega la aplicación principal en *Heroku*. Esta directiva es llamada
 desde el [Procfile](https://github.com/nazaretrogue/Microservicio-multimedia/blob/master/Procfile).
 Para desplegarla, depende de que el entorno virtual esté creado. Cuando está creado

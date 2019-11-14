@@ -13,7 +13,7 @@ Para poder desplegar en [*Heroku*](https://www.heroku.com/), lo primero es tener
 una cuenta creada.
 
 Si ya tenemos una, debemos instalar el CLI de *Heroku*. Para ello, ejecutamos
-en la máquina local (con un SO Ubuntu 18.04):
+en la máquina local (en mi caso es un comando para SO Ubuntu 18.04):
 
 ```bash
 sudo snap install heroku --classic
@@ -32,6 +32,9 @@ heroku login
 
 que abrirá el navegador para que nos logueemos dándole simplemente al botón de **Log in**.
 
+![Login](img/login.png)
+
+
 Una vez hecho esto, creamos la aplicación que deseamos. En mi caso, hay que añadir
 además un addon, el servidor de RabbitMQ en *Heroku*, llamado CloudAMQP, y usando
 la versión **lemur** que es la gratuita y no cobran extra. No obstante, para añadir
@@ -49,7 +52,7 @@ Con esto hemos creado un servicio *tratamientoimg* al que le hemos conectado Rab
 Puesto que es necesario conectarlo al servidor de RabbitMQ en *Heroku*, hay que
 modificar ligeramente los archivos [*sender.py*](https://github.com/nazaretrogue/Microservicio-multimedia/blob/master/src/sender.py)
 y [*receiver.py*](https://github.com/nazaretrogue/Microservicio-multimedia/blob/master/src/receiver.py).
-Hablo de ella un poco más abajo. Dicha modificación se basa en la presencia de
+Hablo de las modificaciones un poco más abajo. Dicha modificación se basa en la presencia de
 una variable de entorno de *Heroku*: si dicha variable está presente significa
 que hay que conectar la aplicación al usuario invitado de RabbitMQ en *Heroku*;
 si no está, hay que conectarse en *localhost*. Para llevar esto a cabo se utiliza
@@ -64,6 +67,8 @@ importante, solo es importante que la variable en sí exista). Además, en la p�
 de *Heroku* hay que configurar los *dynos* para que haya dos, el principal que
 es la web, y el worker, en este caso el receiver, ya que aunque esté incluido en
 el Procfile hay que habilitarlo manualmente en la web.
+
+![Dynos](img/dynos.png)
 
 Una vez hecho esto solo hay que decirle a *Heroku* que suba los cambios para
 desplegarlos:
@@ -85,6 +90,8 @@ cambios. Para ello, dentro de la web de *Heroku*, buscamos nuestro proyecto y en
 la sección de *Deploy* cambiámos el método a **GitHub**. En mi caso además he
 seleccionado la casilla que da la opción de no desplegar la aplicación si no
 pasa los tests de integración continua.
+
+![git push](img/deployment.png)
 
 A pesar de que estos pasos se han explicado uno por uno, todo esto está agrupado
 en un target de la herramienta de construcción, el [*Makefile*](https://github.com/nazaretrogue/Microservicio-multimedia/blob/master/Makefile):
@@ -122,17 +129,11 @@ Para comprobar que ambos procesos están funcionando se utiliza
 heroku ps
 ```
 
-que mostrará una salida como:
+que mostrará una salida como la de la imagen siguiente:
 
-```bash
-=== web (Free): make deploy (1)
-web.1: up 2019/11/13 22:05:17 +0100 (~ 2m ago)
+![Heroku ps](img/heroku-ps.png)
 
-=== worker (Free): python src/receiver.py (1)
-worker.1: up 2019/11/13 22:05:03 +0100 (~ 2m ago)
-```
-
-Es decir, que ambos servicios están funcionando.
+Se puede ver que ambos servicios están funcionando.
 
 ## Bibliografía
 

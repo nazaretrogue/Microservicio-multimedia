@@ -7,7 +7,8 @@
 <!--ts-->
    * [Introducción al microservicio de tratamiento de imágenes](#Introduccion-al-microservicio-de-tratamiento-de-imagenes)
    * [*Buildtool*](#Buildtool)
-   * [Documentación de la API](#Documentacion-de-la-API)
+   * [Despliegue](#Despliegue)
+   * [Documentación de la API y los tests](#Documentacion-de-la-API-y-los-tests)
 <!--te-->
 
 ## Introducción al microservicio de tratamiento de imágenes
