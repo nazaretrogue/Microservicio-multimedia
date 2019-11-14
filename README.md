@@ -14,7 +14,7 @@
 ## Introducción al microservicio de tratamiento de imágenes
 
 Se puede leer toda la información sobre qué es, su utilidad, qué se ha utilizado
-para construirlo y su testeo en la [documentación](https://github.com/nazaretrogue/Microservicio-multimedia/blob/master/docs/Utilidad.md).
+para construirlo y su testeo en la [documentación](https://nazaretrogue.github.io/Microservicio-multimedia/Utilidad).
 
 ## *Buildtool*
 
@@ -22,13 +22,13 @@ para construirlo y su testeo en la [documentación](https://github.com/nazaretro
 buildtool: Makefile
 ```
 
-La documentación de la buildtool está en este [enlace](https://github.com/nazaretrogue/Microservicio-multimedia/blob/master/docs/Tecnologias_usadas.md#Makefile).
+La documentación de la buildtool está en este [enlace](https://nazaretrogue.github.io/Microservicio-multimedia/Tecnologias_usadas).
 
 ## Despliegue
 
 Despliegue: https://tratamientoimg.herokuapp.com/
 
-La documentación sobre el despliegue está [aquí](https://github.com/nazaretrogue/Microservicio-multimedia/blob/master/docs/PaaS.md).
+La documentación sobre el despliegue está [aquí](https://nazaretrogue.github.io/Microservicio-multimedia/PaaS).
 
 ## Documentación de la API y los tests
 

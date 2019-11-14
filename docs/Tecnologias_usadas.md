@@ -114,7 +114,7 @@ dependencias... en memoria pero sin parar los procesos.
 aplicación.
 * *test*: ejecuta los tests con la herramienta pytest de Python.
 * *heroku*: ejecuta las instrucciones necesarias para crear la aplicación en *Heroku*.
-La explicación a dichas instrucciones está [aquí](https://github.com/nazaretrogue/Microservicio-multimedia/blob/master/docs/PaaS.md).
+La explicación a dichas instrucciones está [aquí](https://nazaretrogue.github.io/Microservicio-multimedia/PaaS).
 * *deploy*: despliega la aplicación principal en *Heroku*. Esta directiva es llamada
 desde el [Procfile](https://github.com/nazaretrogue/Microservicio-multimedia/blob/master/Procfile).
 Para desplegarla, depende de que el entorno virtual esté creado. Cuando está creado

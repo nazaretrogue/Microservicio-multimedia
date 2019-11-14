@@ -31,7 +31,7 @@ que ofrece los recursos necesarios para hacer tests tanto unitarios como de inte
 continua.
 
 Las tecnologías utilizadas se explican de forma más detallada en la
-[documentación](https://github.com/nazaretrogue/Microservicio-multimedia/blob/master/docs/Tecnologias_usadas.md).
+[documentación](https://nazaretrogue.github.io/Microservicio-multimedia/Tecnologias_usadas).
 
 No será necesaria una base de datos donde almacenar las imágenes puesto que se enviarán
 directamente en los mensajes HTTP.
@@ -42,7 +42,7 @@ que se encargan de multimedia en Java, siendo sencillo de escribir en código pe
 consiguiendo unos resultados muy visuales. Me gustó tanto que decidí que quería
 hacer un proyecto relacionado con multimedia. Tras muchos problemas intentando
 implementarlo en Java, decidí cambiar a Python que es mucho más sencillo para
-desplegarlo en la nube. Dichos problemas con Java se explican [aquí](https://github.com/nazaretrogue/Microservicio-multimedia/blob/master/docs/Problemas_java.md).
+desplegarlo en la nube. Dichos problemas con Java se explican [aquí](https://nazaretrogue.github.io/Microservicio-multimedia/Problemas_java).
 
 Se ha creado un caso hipotético donde un cliente desea que se implemente el filtro
 comentado para su empresa. Para ello, se hace una entrevista que se puede leer
@@ -51,14 +51,14 @@ comentado para su empresa. Para ello, se hace una entrevista que se puede leer
 ## ¿Qué hace exactamente el filtro del microservicio?
 
 Un ejemplo del funcionamiento del filtro se puede encontrar en la documentación presente
-[en la documentación](https://github.com/nazaretrogue/Microservicio-multimedia/blob/master/docs/Funcionamiento_filtro.md).
+[en la documentación](https://nazaretrogue.github.io/Microservicio-multimedia/Funcionamiento_filtro).
 
 ## Cómo instalar y testear la aplicación en local
 
 Para poder testear la aplicación es necesario tener instalado python3 y el instalador
 de módulos de éste, *pip* para poder instalar el módulo *pytest*. Todo esto, y la
 funcionalidad del test está explicado con más detalle en la
-[documentación](https://github.com/nazaretrogue/Microservicio-multimedia/blob/master/docs/Tecnologias_usadas.md).
+[documentación](https://nazaretrogue.github.io/Microservicio-multimedia/Tecnologias_usadas).
 
 Una vez que esté instalados, clonamos el repositorio con:
 
