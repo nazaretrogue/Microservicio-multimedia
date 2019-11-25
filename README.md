@@ -8,6 +8,8 @@
    * [Introducción al microservicio de tratamiento de imágenes](#Introduccion-al-microservicio-de-tratamiento-de-imagenes)
    * [*Buildtool*](#Buildtool)
    * [Despliegue](#Despliegue)
+   * [Despliegue con contenedores](#Despliegue-con-contenedores)
+   * [DockerHub](#DockerHub)
    * [Documentación de la API y los tests](#Documentacion-de-la-API-y-los-tests)
 <!--te-->
 
@@ -29,6 +31,24 @@ La documentación de la buildtool está en este [enlace](https://nazaretrogue.gi
 Despliegue: https://tratamientoimg.herokuapp.com/
 
 La documentación sobre el despliegue está [aquí](https://nazaretrogue.github.io/Microservicio-multimedia/PaaS).
+
+## Despliegue con contenedores
+
+Contenedor: https://tratamientoimg.herokuapp.com/
+Contenedor:
+
+La documentación sobre los ficheros de configuración utilizados está [aquí](https://nazaretrogue.github.io/Microservicio-multimedia/docker).
+La documentación sobre el procedimiento de despliegue, [aquí]().
+
+## DockerHub
+
+DockerHub: https://hub.docker.com/repository/docker/nazaretrogue/tratamientoimg
+
+Para descargarlo en local:
+
+```bash
+docker pull nazaretrogue/tratamientoimg:latest
+```
 
 ## Documentación de la API y los tests
 

@@ -85,6 +85,15 @@ heroku:
 
 deploy: create_environment
 	gunicorn app:app
+
+container-build:
+	heroku stack:set container
+	git push heroku master
+	docker build -t tratamientoimg
+
+container-run: container-build
+	docker run -p 5000:5000 tratamientoimg
+
 ```
 
 Vamos a explicar qué hace cada etiqueta.
@@ -119,6 +128,17 @@ La explicación a dichas instrucciones está [aquí](https://nazaretrogue.github
 desde el [Procfile](https://github.com/nazaretrogue/Microservicio-multimedia/blob/master/Procfile).
 Para desplegarla, depende de que el entorno virtual esté creado. Cuando está creado
 se ejecuta *Gunicorn*, un servidor de interfaz puerta-enlace para Python.
+* *container-build*: construye el contenedor para *Heroku*. Para ello, primero establece
+una pila en forma de contenedor para indicar que el despliegue será a través de
+un contenedor. Esto hace que *Heroku* busque un archivo [heroku.yml](https://github.com/nazaretrogue/Microservicio-multimedia/blob/master/heroku.yml)
+para ejecutar el contenedor. La documentación de dicho archivo está [aquí](https://nazaretrogue.github.io/Microservicio-multimedia/docker).
+Tras
+esto se hace un push a nuestro repositorio (realmente la orden es un git push normal
+ya que tenemos configurado *Heroku* para que se redespliegue al hacer push a nuestro
+repositorio). Por último, construimos el contenedor con build.
+* *container-run*: levanta el contenedor para dar servicio, en el puerto 5000.
+Depende de la etiqueta *container-build* ya que sin construir el contenedor no
+lo vamos a poder lanzar.
 
 ### Travis CI
 

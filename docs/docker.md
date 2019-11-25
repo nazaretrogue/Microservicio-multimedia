@@ -1,9 +1,10 @@
-# Despliegue usando Virtualización ligera: contenedores
+# Despliegue usando virtualización ligera: contenedores
 
 ## Tabla de contenidos
 <!--ts-->
    * [*Dockerfile*](#Dockerfile)
    * [heroku.yml](#heroku.yml)
+   * [Bibliografía](#Bibliografía)
 <!--te-->
 
 ## *Dockerfile*
@@ -100,3 +101,7 @@ La orden *build* indica qué es lo que se va a construir, en este caso, un conte
 indicado con la directiva *docker*. Dentro del contenedor se va a lanzar un solo
 proceso web, indicado con la directiva *web*, y cuya configuración está en el
 archivo *Dockerfile* anteriormente explicado.
+
+## Bibliografía
+
+* [Constuir en docker con heroku.yml](https://devcenter.heroku.com/articles/build-docker-images-heroku-yml)

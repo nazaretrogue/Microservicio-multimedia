@@ -7,6 +7,8 @@
    * [Problemas en Java](#Problemas-en-Java)
    * [Herramientas de construcción e integración continua](#Herramientas-de-construccion-e-integracion-continua)
    * [Despliegue en un PaaS](#Despliegue-en-un-PaaS)
+   * [Virtualización ligera](#Virtualizacion-ligera)
+   * [Despliegue en un PaaS con contenedores](#Despliegue-en-un-PaaS-con-contenedores)
 <!--te-->
 
 ## El microservicio de tratamiento de imágenes
@@ -29,3 +31,11 @@
 ## Despliegue en un PaaS
 
 - [Despliegue en Heroku](https://nazaretrogue.github.io/Microservicio-multimedia/PaaS)
+
+## Virtualización ligera
+
+- [Dockerfile y *heroku.yml*](https://nazaretrogue.github.io/Microservicio-multimedia/docker)
+
+## Despliegue en un PaaS con contenedores
+
+- [Despliegue en un PaaS: uso de docker. DockerHub]()
