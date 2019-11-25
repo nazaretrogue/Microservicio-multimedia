@@ -3,8 +3,7 @@
 ## Tabla de contenidos
 <!--ts-->
    * [*Dockerfile*](#Dockerfile)
-   * [*heroku.yml*](#heroku.yml)
-   * [Bibliografía](#Bibliografia)
+   * [heroku.yml](#heroku.yml)
 <!--te-->
 
 ## *Dockerfile*
@@ -85,7 +84,7 @@ variable de entorno con el puerto que nos da *Heroku* mediante la variable de en
 *$PORT*. Nótese que dicho puerto no tiene que ser el indicado con la orden *EXPOSE*,
 por eso es necesario utilizar la variable de entorno y no poner el puerto a mano.
 
-## *heroku.yml*
+## heroku.yml
 
 El archivo utilizado por *Heroku* cuando se le pide el despliegue con contenedores
 mediante la orden *heroku stack:set container* (explicada [aquí](https://nazaretrogue.github.io/Microservicio-multimedia/Tecnologias_usadas))
