@@ -34,11 +34,13 @@ La documentación sobre el despliegue está [aquí](https://nazaretrogue.github.
 
 ## Despliegue con contenedores
 
-Contenedor: https://tratamientoimg.herokuapp.com/
+Contenedor: https://tratamientoimg.herokuapp.com/  
 Contenedor:
 
-La documentación sobre los ficheros de configuración utilizados está [aquí](https://nazaretrogue.github.io/Microservicio-multimedia/docker).
-La documentación sobre el procedimiento de despliegue, [aquí]().
+La documentación sobre los ficheros de configuración utilizados está [aquí](https://nazaretrogue.github.io/Microservicio-multimedia/docker).  
+La documentación sobre el procedimiento de despliegue, [aquí](https://nazaretrogue.github.io/Microservicio-multimedia/heroku_docker).  
+Se ha actualizado la herramienta de construcción y su [documentación](https://nazaretrogue.github.io/Microservicio-multimedia/Tecnologias_usadas)
+con la automatización del despliegue de contenedores.
 
 ## DockerHub
 
