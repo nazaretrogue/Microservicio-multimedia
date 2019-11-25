@@ -21,4 +21,4 @@ COPY app.py app.py
 
 RUN python src/receiver.py &
 
-CMD gunicorn --bind ${FLASK_RUN_HOST}:5000 app:app
+CMD gunicorn --bind ${FLASK_RUN_HOST}:$PORT app:app
