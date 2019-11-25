@@ -15,7 +15,7 @@ en el contenedor...
 
 El archivo es el siguiente:
 
-```make
+```bash
 FROM rabbitmq:latest
 
 RUN mkdir ./src
