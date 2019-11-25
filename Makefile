@@ -48,3 +48,11 @@ heroku:
 
 deploy: create_environment
 	gunicorn app:app
+
+container-build:
+	heroku stack:set container
+	git push heroku master
+	docker build -t tratamientoimg
+
+container-run: container-build
+	docker run -p 5000:5000 tratamientoimg

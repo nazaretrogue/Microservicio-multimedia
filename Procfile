@@ -1,1 +1,2 @@
-web: docker run -p $PORT:$PORT tratamientoimg
+web: make deploy
+worker: python src/receiver.py
