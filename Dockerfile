@@ -1,4 +1,4 @@
-FROM python:3.7-alpine
+FROM rabbitmq:latest
 
 RUN mkdir ./src
 RUN mkdir ./templates
@@ -7,13 +7,13 @@ WORKDIR .
 ENV FLASK_RUN_HOST 0.0.0.0
 EXPOSE 5000
 
-RUN apk --no-cache add jpeg-dev zlib-dev
-RUN apk add --no-cache --virtual .build-deps build-base linux-headers \
-    && pip install Pillow
+RUN apt-get update && apt-get upgrade -y && apt-get install -y python3 python3-pip
+RUN update-alternatives --install /usr/bin/python python /usr/bin/python3 1\
+    && update-alternatives --install /usr/bin/pip pip /usr/bin/pip3 1
 
 COPY requirements.txt requirements.txt
 
-RUN pip install -r requirements.txt
+RUN pip3 install -r requirements.txt
 
 COPY src/ ./src
 COPY templates/ ./templates
