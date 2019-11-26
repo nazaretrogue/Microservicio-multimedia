@@ -55,4 +55,4 @@ container-build:
 	docker build -t tratamientoimg
 
 container-run: container-build
-	docker run -p 5000:5000 tratamientoimg
+	docker run -p 5000:5000 tratamientoimg 
