@@ -59,10 +59,31 @@ Como podemos comprobar, el servicio está levantado y funcionando.
 
 ## Creación de la app en Azure con contenedores
 
+El despliegue del contenedor en [*Azure*](azure.microsoft.com) es aún más sencillo.
+Para ello, debemos crear un nuevo recurso, concretamente una aplicación web. Una
+vez en la página de creación rellenamos con los datos de la aplicación tal y como
+se ve en la imagen:
+
+![Creación](img/azure-crear.png)
+
+Tras esto, el siguiente paso es conectar la app con *DockerHub*. Si la aplicación
+está subida ahí, *Azure* es capaz de extraerla de éste y desplegarla. Los datos
+que piden son los siguientes:
+
+![DockerHub en Azure](img/docker-azure.png)
+
+Tras esto, se muestran dos páginas más de información y ya se puede desplegar la
+app, aunque antes hace ciertas comprobaciones para saber que todos los datos
+introducidos anteriormente están correctos.
+
+![OK](img/azure-ok.png)
+
+Con esto hemos comprobado que la aplicación está correcta para desplegar.
+
 ## La aplicación en DockerHub
 
 Para subir la aplicación a [*DockerHub*](https://hub.docker.com/), solo debemos
-crear un repositorio en esta plataforma y conectarla con el repositorio de *GitHub* .
+crear un repositorio en esta plataforma y conectarla con el repositorio de *GitHub*.
 
 Para ello, pulsamos el botón de *Create repository* y lo conectamos con *GitHub*
 tal y como se ve en la imagen:
