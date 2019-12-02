@@ -44,7 +44,7 @@ con la automatización del despliegue de contenedores.
 
 ## DockerHub
 
-DockerHub: https://hub.docker.com/repository/docker/nazaretrogue/tratamientoimg
+DockerHub: https://hub.docker.com/r/nazaretrogue/tratamientoimg
 
 Para descargarlo en local:
 
