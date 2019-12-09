@@ -55,4 +55,10 @@ container-build:
 	docker build -t tratamientoimg
 
 container-run: container-build
-	docker run -p 5000:5000 tratamientoimg 
+	docker run -p 5000:5000 tratamientoimg
+
+vm-vagrant:
+
+vm-provision:
+	export ANSIBLE_HOSTS=~/Escritorio/ETSIIT_comp/4º/Cuatri\ 1/IV/Microservicio\ multimedia/ansible_hosts
+	ansible all -u nazaret -m ping

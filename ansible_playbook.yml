@@ -1,0 +1,17 @@
+---
+    - hosts: all
+    become: yes
+    become_user: root
+    tasks:
+        - name: Instala git
+        apt:
+            pkg=git
+            state=present
+        - name: Instala pip
+        apt:
+            pkg=pip
+            state=present
+        - name: Instala RabbitMQ
+        apt:
+            pkg=rabbitmq-server
+            state=present
