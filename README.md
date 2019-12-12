@@ -10,6 +10,7 @@
    * [Despliegue](#Despliegue)
    * [Despliegue con contenedores](#Despliegue-con-contenedores)
    * [DockerHub](#DockerHub)
+   * [Provisionamiento con Ansible y Vagrant](#Provisionamiento-con-Ansible-y-Vagrant)
    * [Documentación de la API y los tests](#Documentacion-de-la-API-y-los-tests)
 <!--te-->
 
@@ -51,6 +52,15 @@ Para descargarlo en local:
 ```bash
 docker pull nazaretrogue/tratamientoimg:latest
 ```
+
+## Provisionamiento con Ansible y Vagrant
+
+Provision: playbook.yml
+
+Se puede leer la documentación sobre los archivos de configuración y
+provisionamiento en este [enlace](https://nazaretrogue.github.io/Microservicio-multimedia/Provisionamiento).
+Se puede ver la documentación de la creación de la máquina y su automatización y
+el despliegue en VagrantCloud [aquí](https://nazaretrogue.github.io/Microservicio-multimedia/Creacion). 
 
 ## Documentación de la API y los tests
 

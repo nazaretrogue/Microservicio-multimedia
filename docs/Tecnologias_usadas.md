@@ -97,7 +97,10 @@ container-run: container-build
 vm-vagrant:
   vagrant up
 
-vm-provision: vm-vagrant
+vm-vagrant-unprovisioned:
+	vagrant up -no--provision
+
+vm-provision: vm-vagrant-unprovisioned
 	ansible-playbook playbook.yml
 
 ```
@@ -148,10 +151,12 @@ lo vamos a poder lanzar.
 * *vm-vagrant*: crea una máquina local provisionada con Ansible mediante Vagrant.
 La máquina creada se levanta mediante las pautas indicadas en el archivo del
 Vagrantfile(https://github.com/nazaretrogue/Microservicio-multimedia/blob/master/Vagrantfile).
+* *vm-vagrant-unprovisioned*: crea una máquina local pero sin provisionarla con
+Ansible automáticamente.
 * *vm-provision*: utiliza Ansible para provisionar la máquina virtual indicada
 en el [playbook.yml](https://github.com/nazaretrogue/Microservicio-multimedia/blob/master/playbook.yml).
 Es necesario que la máquina esté creada, motivo por el cual depende de la etiqueta
-de levantamiento de la máquina con Vagrant.
+de levantamiento de la máquina con Vagrant sin provisionar.
 
 ### Travis CI
 

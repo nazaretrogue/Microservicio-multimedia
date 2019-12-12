@@ -76,7 +76,7 @@ que se ejecutan de forma condicional.
 
 ## Archivo de inventario: *ansible_hosts*
 
-El inventario, [/*ansible_hosts*/](https://github.com/nazaretrogue/Microservicio-multimedia/blob/master/ansible_hosts)
+El inventario, [*ansible_hosts*](https://github.com/nazaretrogue/Microservicio-multimedia/blob/master/ansible_hosts)
 contiene los grupos con las máquinas que se van a levantar.
 
 El archivo contiene lo siguiente:
@@ -106,7 +106,7 @@ usuario que va a acceder a la máquina por defecto si no se indica otro usuario.
 
 ## Receta: *playbook.yml*
 
-El archivo [/*playbook.yml*/](https://github.com/nazaretrogue/Microservicio-multimedia/blob/master/playbook.yml)
+El archivo [*playbook.yml*](https://github.com/nazaretrogue/Microservicio-multimedia/blob/master/playbook.yml)
 contiene los módulos y dependencias que deben estar instaladas en la máquina que
 se va a levantar, es decir, provisiona dicha máquina.
 

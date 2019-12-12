@@ -60,5 +60,8 @@ container-run: container-build
 vm-vagrant:
 	vagrant up
 
-vm-provision:
+vm-vagrant-unprovisioned:
+	vagrant up -no--provision
+
+vm-provision: vm-vagrant-unprovisioned
 	ansible-playbook playbook.yml
