@@ -94,6 +94,12 @@ container-build:
 container-run: container-build
 	docker run -p 5000:5000 tratamientoimg
 
+vm-vagrant:
+  vagrant up
+
+vm-provision: vm-vagrant
+	ansible-playbook playbook.yml
+
 ```
 
 Vamos a explicar qué hace cada etiqueta.
@@ -139,6 +145,13 @@ repositorio). Por último, construimos el contenedor con build.
 * *container-run*: levanta el contenedor para dar servicio, en el puerto 5000.
 Depende de la etiqueta *container-build* ya que sin construir el contenedor no
 lo vamos a poder lanzar.
+* *vm-vagrant*: crea una máquina local provisionada con Ansible mediante Vagrant.
+La máquina creada se levanta mediante las pautas indicadas en el archivo del
+Vagrantfile(https://github.com/nazaretrogue/Microservicio-multimedia/blob/master/Vagrantfile).
+* *vm-provision*: utiliza Ansible para provisionar la máquina virtual indicada
+en el [playbook.yml](https://github.com/nazaretrogue/Microservicio-multimedia/blob/master/playbook.yml).
+Es necesario que la máquina esté creada, motivo por el cual depende de la etiqueta
+de levantamiento de la máquina con Vagrant.
 
 ### Travis CI
 

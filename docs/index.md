@@ -39,3 +39,7 @@
 ## Despliegue en varios PaaS con contenedores
 
 - [Despliegue en varios PaaS: uso de docker. DockerHub](https://nazaretrogue.github.io/Microservicio-multimedia/heroku_docker)
+
+## Provisionamiento con Ansible y creación con Vagrant
+
+- [Ficheros para el provisionamiento](https://nazaretrogue.github.io/Microservicio-multimedia/Provisionamiento)
