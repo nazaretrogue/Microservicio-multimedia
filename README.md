@@ -58,9 +58,9 @@ docker pull nazaretrogue/tratamientoimg:latest
 Provision: playbook.yml
 
 Se puede leer la documentación sobre los archivos de configuración y
-provisionamiento en este [enlace](https://nazaretrogue.github.io/Microservicio-multimedia/Provisionamiento).
+provisionamiento en este [enlace](https://nazaretrogue.github.io/Microservicio-multimedia/Provisionamiento).  
 Se puede ver la documentación de la creación de la máquina y su automatización y
-el despliegue en VagrantCloud [aquí](https://nazaretrogue.github.io/Microservicio-multimedia/Creacion). 
+el despliegue en VagrantCloud [aquí](https://nazaretrogue.github.io/Microservicio-multimedia/Creacion).
 
 ## Documentación de la API y los tests
 

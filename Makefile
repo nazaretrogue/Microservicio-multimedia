@@ -63,5 +63,5 @@ vm-vagrant:
 vm-vagrant-unprovisioned:
 	vagrant up -no--provision
 
-vm-provision: vm-vagrant-unprovisioned
+vm-provision: vm-vagrant-unprovisioned 
 	ansible-playbook playbook.yml
