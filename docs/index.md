@@ -9,6 +9,7 @@
    * [Despliegue en un PaaS](#Despliegue-en-un-PaaS)
    * [Virtualización ligera](#Virtualizacion-ligera)
    * [Despliegue en varios PaaS con contenedores](#Despliegue-en-varios-PaaS-con-contenedores)
+   * [Provisionamiento con Ansible y creación con Vagrant](#Provisionamiento-con-Ansible-y-creación-con-Vagrant)
 <!--te-->
 
 ## El microservicio de tratamiento de imágenes

@@ -12,6 +12,7 @@
    * [DockerHub](#DockerHub)
    * [Provisionamiento con Ansible y Vagrant](#Provisionamiento-con-Ansible-y-Vagrant)
    * [Documentación de la API y los tests](#Documentacion-de-la-API-y-los-tests)
+   * [Provisionamiento con Ansible y Vagrant](#Provisionamiento-con-Ansible-y-Vagrant)
 <!--te-->
 
 ## Introducción al microservicio de tratamiento de imágenes
