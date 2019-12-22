@@ -63,5 +63,13 @@ vm-vagrant:
 vm-vagrant-unprovisioned:
 	vagrant up -no--provision
 
-vm-provision: vm-vagrant-unprovisioned 
+vm-provision: vm-vagrant-unprovisioned
 	ansible-playbook playbook.yml
+
+vm-azure:
+	vagrant plugin install vagrant-azure
+	vagrant box add azure-dummy https://github.com/Azure/vagrant-azure/raw/v2.0/dummy.box --provider azure
+	az ad sp creaate-for-rbac
+	export AZURE_TENANT_ID=$(az account list --query '[?isDefault].tenantId' -o tsv)
+	export AZURE_SUBSCRIPTION_ID=$(az account list --query '[?isDefault].id' -o tsv)
+	vagrant up

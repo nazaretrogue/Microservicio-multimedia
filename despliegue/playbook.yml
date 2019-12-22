@@ -35,3 +35,8 @@
         user: nazaret
         state: present
         key: "{{ lookup('file', '/home/nazaret/.ssh/id_rsa.pub') }}"
+    - name: Clonar repo
+      git: repo=https://github.com/nazaretrogue/Microservicio-multimedia.git
+           clone=yes
+           dest=/home/nazaret/
+           force=yes
