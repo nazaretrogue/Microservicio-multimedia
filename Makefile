@@ -69,7 +69,10 @@ vm-provision: vm-vagrant-unprovisioned
 vm-azure:
 	vagrant plugin install vagrant-azure
 	vagrant box add azure-dummy https://github.com/Azure/vagrant-azure/raw/v2.0/dummy.box --provider azure
-	az ad sp creaate-for-rbac
+	az login
+	az ad sp create-for-rbac
 	export AZURE_TENANT_ID=$(az account list --query '[?isDefault].tenantId' -o tsv)
+	export AZURE_CLIENT_ID="055c5443-f0c6-4cd3-ba0a-223f75f21d25"
+	export AZURE_CLIENT_SECRET="e2d8d8fe-6709-4355-b8cb-566364b7a92c"
 	export AZURE_SUBSCRIPTION_ID=$(az account list --query '[?isDefault].id' -o tsv)
-	vagrant up
+	vagrant up --provider=azure

@@ -1,5 +1,5 @@
 ---
-- hosts: tratamientoimg
+- hosts: tratamientoimg-az
   become: true
   tasks:
     - name: Instala git
@@ -34,9 +34,13 @@
       authorized_key:
         user: nazaret
         state: present
-        key: "{{ lookup('file', '/home/nazaret/.ssh/id_rsa.pub') }}"
+        key: "{{ lookup('file', '/home/nazaret/.ssh/key_rsa.pub') }}"
     - name: Clonar repo
       git: repo=https://github.com/nazaretrogue/Microservicio-multimedia.git
            clone=yes
-           dest=/home/nazaret/
+           dest=Microservicio-multimedia/
            force=yes
+    - name: Inicia bróker de mensajería
+      command: pm2 start Microservicio-multimedia/src/receiver.py
+    - name: Inicia app
+      command: pm2 start Microservicio-multimedia/app.py
