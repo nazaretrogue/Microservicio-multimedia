@@ -1,5 +1,5 @@
 ---
-- hosts: tratamientoimg-az
+- hosts: all
   become: true
   tasks:
     - name: Instala git
@@ -30,11 +30,6 @@
       user:
         name: nazaret
         shell: /bin/bash
-    - name: SSH
-      authorized_key:
-        user: nazaret
-        state: present
-        key: "{{ lookup('file', '/home/nazaret/.ssh/key_rsa.pub') }}"
     - name: Clonar repo
       git: repo=https://github.com/nazaretrogue/Microservicio-multimedia.git
            clone=yes

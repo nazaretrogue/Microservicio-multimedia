@@ -1,5 +1,4 @@
 Vagrant.configure("2") do |config|
-    # config.vm.define = "tratamientoimg-az"
     config.vm.box = 'azure-dummy'
     config.vm.box_url = 'https://github.com/Azure/vagrant-azure/raw/v2.0/dummy.box'
     config.ssh.private_key_path = "/home/nazaret/.ssh/key_rsa"
@@ -13,6 +12,7 @@ Vagrant.configure("2") do |config|
       az.vm_image_urn = "Canonical:UbuntuServer:18.04-LTS:latest" # sacado con az vm image list
       az.resource_group_name = "nazaretrg_rg_Linux_westeurope"
       az.location = "westeurope"
+      az.tcp_endpoints = '80'
     end
     config.vm.provision "ansible_local" do |ansible|
         ansible.playbook = "despliegue/playbook.yml"
