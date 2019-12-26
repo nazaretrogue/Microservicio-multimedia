@@ -30,12 +30,24 @@
       user:
         name: nazaret
         shell: /bin/bash
-    - name: Clonar repo
-      git: repo=https://github.com/nazaretrogue/Microservicio-multimedia.git
-           clone=yes
-           dest=Microservicio-multimedia/
-           force=yes
-    - name: Inicia bróker de mensajería
-      command: pm2 start Microservicio-multimedia/src/receiver.py
+    - name: SSH
+      authorized_key:
+        user: nazaret
+        state: present
+        key: "{{ lookup('file', '/home/nazaret/.ssh/id_rsa.pub') }}"
+    - git:
+        repo: https://github.com/nazaretrogue/Microservicio-multimedia.git
+        clone: yes
+        dest: ~/Microservicio-multimedia/
+        force: yes
+    - pip:
+        requirements: ~/Microservicio-multimedia/requirements.txt
+    - name: Instala make
+      apt:
+        pkg: make
+        state: present
     - name: Inicia app
-      command: pm2 start Microservicio-multimedia/app.py
+        make:
+          file: ~/Microservicio-multimedia/Makefile
+          target: vm-azure-app
+          chdir: ~/Microservicio-multimedia

@@ -66,7 +66,7 @@ vm-vagrant-unprovisioned:
 vm-provision: vm-vagrant-unprovisioned
 	ansible-playbook playbook.yml
 
-vm-azure:
+vm-azure-deploy:
 	vagrant plugin install vagrant-azure
 	vagrant box add azure-dummy https://github.com/Azure/vagrant-azure/raw/v2.0/dummy.box --provider azure
 	az login
@@ -74,3 +74,7 @@ vm-azure:
 	export AZURE_TENANT_ID=$(az account list --query '[?isDefault].tenantId' -o tsv)
 	export AZURE_SUBSCRIPTION_ID=$(az account list --query '[?isDefault].id' -o tsv)
 	vagrant up --provider=azure
+
+vm-azure-app: install create_environment
+	pm2 start Microservicio-multimedia/src/receiver.py
+	pm2 start Microservicio-multimedia/app.py
